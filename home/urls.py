@@ -29,7 +29,12 @@ admin.site.index_title = "Welocom to Portal"
 urlpatterns = [
     path('', views.home, name='home'),
     path('project', views.project, name='project'),
+    path('about', views.about, name='about'),
+    path('contact', views.contact, name='contact'),
     path('#contact', views.contact, name='contact'),
+    path('service', views.service, name='service'),
+    path('project', views.project, name='project'),
+    path('blog', views.blog, name='blog'),
     # path('skills', views.skills, name='skills'),
     # path('contact', views.contact, name='contact'),
 ]

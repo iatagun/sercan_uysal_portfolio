@@ -112,17 +112,17 @@
                             <div class="main-menu">
                                 <nav id="mobile-menu">
                                     <ul>
-                                        <li><a href="index.html" class="linkstyle" style="color:white;">Home</a></li>
-                                        <li><a href="about.html" class="linkstyle"style="color:white;">about</a></li>
-                                        <li><a href="service.html" class="linkstyle" style="color:white;">services</a></li>
-                                        <li class="has-dropdown"><a href="projects.html" style="color:white;" class="linkstyle">projects</a>
+                                        <li><a href="{% url 'home' %}" class="linkstyle" style="color:white;">Home</a></li>
+                                        <li><a href="{% url 'about' %}" class="linkstyle"style="color:white;">about</a></li>
+                                        <li><a href="{% url 'service' %}" class="linkstyle" style="color:white;">services</a></li>
+                                        <li class="has-dropdown"><a href="{% url 'project' %}" style="color:white;" class="linkstyle">projects</a>
                                             <ul class="sub-menu">
                                                 <li><a href="projects.html" style="color:white;">Projects List</a></li>
                                                 <li><a href="single-project.html" style="color:white;">Single Portfolio</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="blog.html" class="linkstyle" style="color:white;">Blog</a></li>
-                                        <li><a href="contact.html" class="linkstyle" style="color:white;">Contact</a></li>
+                                        <li><a href="{% url 'blog' %}" class="linkstyle" style="color:white;">Blog</a></li>
+                                        <li><a href="{% url 'contact' %}" class="linkstyle" style="color:white;">Contact</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -192,17 +192,13 @@
             <div class="row">
                 <!-- START ABOUT TEXT DESIGN AREA -->
                 <div class="col-lg-3 col-sm-3">
-                    <img src="{%static 'images/hak.gif' %}" alt="Computer man" style="width:300px;height:250px;">
+                    <img src="{% static 'images/hak.gif' %}" alt="{{ about_info.name }}" style="width:300px;height:250px;">
 
                 </div>
                 <div class="col-lg-9 col-sm-9">
                     <div class="about-content-part wow fadeInUp delay-0-2s">
-                        <p>Hakkımda</p>
-                        <p style="font-size: medium;">Ben Sercan Uysal. Gazi Üniversitesi Grafik Tasarım Öğretmenliği mezunuyum. Grafik tasarımla başladığım kariyerime, tutkum olan oyun geliştirme alanında devam ediyorum. 2010’da ODTÜ ATOM’da konsept sanatçısı olarak sektöre adım attım. O günden bu yana mobil ve PC oyunları için illüstrasyon, konsept tasarımı, 3D modelleme ve UI tasarımı üretiyorum.
-
-                            Ayrıca belgesel ve animasyon projelerinde görev aldım; farklı prodüksiyon süreçleri, görsel hikâye anlatımı bakışımı geliştirdi. Sanat yönetimi yaptığım projelerde estetik ve işlevselliği dengede tutmaya özen gösterdim.
-                            
-                            Blender, Adobe Photoshop, Illustrator ve Substance Painter gibi araçlarla çalışıyor; her projede yeni teknikler ve yaklaşımlar öğrenerek kendimi geliştirmeyi sürdürüyorum.</p>
+                        <p>{{title}}</p>
+                        <p style="font-size: medium;"> {{detailed_description}}</p>
                     </div>
                     
                 </div>
@@ -214,45 +210,31 @@
     <!-- START SERVICE DESIGN AREA -->
     <section id="my-skills">
         <div class="ms-container">
-          <div class="ms-title">
-            <h2 style="color: #404041;">My Skills</h2>
-          </div>
-          <div class="ms-row">
-            <div class="ms-col">
-              <h4 class="ms-subtitle" style="color: #404041;">Every Day is a New Challenge</h4>
-              <p style="color: #404041;">
-                In id nulla magna. Nullam posuere fermentum mattis. Nunc id dui at sapien faucibus fermentum
-                ut vel diam. Nullam tempus, nunc id efficitur sagittis, urna est ultricies eros, ac porta
-                sem turpis quis leo. Nulla in feugiat elit.
-              </p>
-              <p style="color: #404041;">
-                Phasellus accumsan scelerisque dolor, quis mattis justo bibendum non. Nulla sollicitudin
-                turpis in enim elementum varius. Vestibulum ante ipsum primis in faucibus orci luctus
-                et ultrices posuere cubilia Curae.
-              </p>
-              <a href="#contact" class="ms-btn" style="color: #404041;">Contact Me</a>
+            <div class="ms-title">
+                <h2 style="color: #404041;">{{ skill_section.title }}</h2>
             </div>
-            <div class="ms-col">
-              <div class="ms-progress" data-progress-width="100%">
-                <h5 class="ms-progress-title">Webdesign</h5>
-                <div class="ms-progress-bar" style="width: 100%;"></div>
-              </div>
-              <div class="ms-progress" data-progress-width="80%">
-                <h5 class="ms-progress-title">Photography</h5>
-                <div class="ms-progress-bar" style="width: 80%;"></div>
-              </div>
-              <div class="ms-progress" data-progress-width="90%">
-                <h5 class="ms-progress-title">Coding</h5>
-                <div class="ms-progress-bar" style="width: 90%;"></div>
-              </div>
-              <div class="ms-progress" data-progress-width="60%">
-                <h5 class="ms-progress-title">Copywriting</h5>
-                <div class="ms-progress-bar" style="width: 60%;"></div>
-              </div>
-            </div>
-          </div>
+            <div class="ms-row">
+                <div class="ms-col">
+                    <h4 style="color: #404041;">{{ skill_section.subtitle }}</h4>
+                    <p style="color: #404041;">{{ skill_section.description }}</p>
+                    {% if skill_section.additional_description %}
+                        <p style="color: #404041;">{{ skill_section.additional_description }}</p>
+                    {% endif %}
+                    <a href="{{ skill_section.button_link }}" class="ms-btn" >{{ skill_section.button_text }}</a>
+                </div>
+                <div class="ms-col">
+    {% for skill in skill_section.skills.all %}
+        <div class="ms-progress" data-progress-width="{{ skill.proficiency_percentage }}%">
+            <h5 class="ms-progress-title">
+                {{ skill.name }} - {{ skill.proficiency_percentage }}%
+            </h5>
+            <div class="ms-progress-bar" style="width: {{ skill.proficiency_percentage }}%;"></div>
         </div>
-      </section>
+    {% endfor %}
+</div>
+            </div>
+        </div>
+    </section>
       
     <!-- / END SERVICE DESIGN AREA -->
     <!-- Becerilerim ve kullandığım programlar olacak -->
@@ -262,86 +244,25 @@
         </div>
         <div class="container-fluid">
             <div class="row g-4 portfolio-grid">
-                <!-- START SINGLE PORTFOLIO DESIGN AREA -->
-                <div class="col-md-6 col-xl-6 portfolio-item category-1">
-                    <a href="{% static 'images/projects/work1.jpg' %}" class="work-popup">
-                        <div class="portfolio-box">
-                            <!-- Image -->
-                            <img src="{% static 'images/projects/work1.jpg' %}" alt="" data-rjs="2">
-                            <!-- Category -->
-                            <span class="portfolio-category">Branding</span>
-                            <!-- Caption -->
-                            <div class="portfolio-caption">
-                                <h1>Glasses of Cocktail</h1>
+                {% for category in categories %}
+                    {% for project in category.projects.all %}
+                    <div class="col-md-6 col-xl-4 portfolio-item">
+                        {% if project.link %}
+                            <a href="{{ project.link }}" {% if project.is_video %} class="popup-youtube"{% else %}class="work-popup"{% endif %}>
+                        {% else %}
+                            <a href="{{ project.image.url }}" class="work-popup">
+                        {% endif %}
+                            <div class="portfolio-box">
+                                <img src="{{ project.image.url }}" alt="{{ project.title }}">
+                                <span class="portfolio-category">{{ category.name }}</span>
+                                <div class="portfolio-caption">
+                                    <h1>{{ project.title }}</h1>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- // beceriler ve programlar bitti -->
-                <!-- START SINGLE PORTFOLIO DESIGN AREA -->
-                <div class="col-md-6 col-xl-6 portfolio-item category-2">
-                    <a href="single-project.html">
-                        <div class="portfolio-box">
-                            <!-- Image -->
-                            <img src="{% static 'images/projects/work2.jpg' %}" alt="" data-rjs="2">
-                            <!-- Category -->
-                            <span class="portfolio-category">Mockup</span>
-                            <!-- Caption -->
-                            <div class="portfolio-caption">
-                                <h1>A Branch with Flowers</h1>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- // END SINGLE PORTFOLIO DESIGN AREA -->
-                <!-- START SINGLE PORTFOLIO DESIGN AREA -->
-                <div class="col-md-6 col-xl-4 portfolio-item category-2">
-                    <a href="https://www.youtube.com/watch?v=qZEPs3vmYB4" class="popup-youtube">
-                        <div class="portfolio-box">
-                            <!-- Image -->
-                            <img src="{% static 'images/projects/work3.jpg' %}" alt="" data-rjs="2">
-                            <!-- Category -->
-                            <span class="portfolio-category">Video</span>
-                            <!-- Caption -->
-                            <div class="portfolio-caption">
-                                <h1>Orange Rose Flower</h1>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- // END SINGLE PORTFOLIO DESIGN AREA -->
-                <!-- START SINGLE PORTFOLIO DESIGN AREA -->
-                <div class="col-md-6 col-xl-4 portfolio-item category-1">
-                    <a href="{% static 'images/projects/work4.jpg' %}" class="work-popup">
-                        <div class="portfolio-box">
-                            <!-- Image -->
-                            <img src="{% static 'images/projects/work4.jpg' %}" alt="" data-rjs="2">
-                            <!-- Category -->
-                            <span class="portfolio-category">Branding</span>
-                            <!-- Caption -->
-                            <div class="portfolio-caption">
-                                <h1>Green Plant on a Desk</h1>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- // END SINGLE PORTFOLIO DESIGN AREA -->
-                <!-- START SINGLE PORTFOLIO DESIGN AREA -->
-                <div class="col-md-6 col-xl-4 portfolio-item category-2">
-                    <a href="{% static 'images/projects/work5.jpg' %}" class="work-popup">
-                        <div class="portfolio-box">
-                            <!-- Image -->
-                            <img src="{% static 'images/projects/work5.jpg' %}" alt="" data-rjs="2">
-                            <!-- Category -->
-                            <span class="portfolio-category">Mockup</span>
-                            <!-- Caption -->
-                            <div class="portfolio-caption">
-                                <h1>Orange Rose Flower</h1>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- // END SINGLE PORTFOLIO DESIGN AREA -->
+                        </a>
+                    </div>
+                    {% endfor %}
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -363,7 +284,7 @@
                 <div class="col-lg-6">
                     <div class="blog-post-img">
                         <a href="#">
-                            <img src="assets/images/blog/blog1.jpg" alt="">
+                            <img src="{% static 'images/blog/blog1.jpg' %}" alt="">
                         </a>
                         <div class="blog-post-category">
                             <a href="#">Help</a>
@@ -372,9 +293,9 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="blog-post-caption">
-                        <h3>Posted on Aug 28</h3>
-                        <h2><a class="link-decoration" href="#">Create a Landing Page That Performs Great</a></h2>
-                        <a class="theme-btn theme-btn-two" href="#">Read more <i class="ri-arrow-right-line"></i></a>
+                        <h3 style="color: #404041;">Posted on Aug 28</h3>
+                        <h2><a class="link-decoration" href="#" style="color: #404041;">Create a Landing Page That Performs Great</a></h2>
+                        <a class="theme-btn theme-btn-two" href="#"style="color: #404041;">Read more <i class="ri-arrow-right-line"></i></a>
                     </div>
                 </div>
             </div>
@@ -384,18 +305,18 @@
                 <div class="col-lg-6">
                     <div class="blog-post-img">
                         <a href="#">
-                            <img src="assets/images/blog/blog2.jpg" alt="">
+                            <img src="{% static 'images/blog/blog2.jpg' %}" alt="">
                         </a>
                         <div class="blog-post-category">
-                            <a href="#">Branding</a>
+                            <a href="#" style="color: #404041;">Branding</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="blog-post-caption">
-                        <h3>Posted on Aug 28</h3>
-                        <h2><a class="link-decoration" href="#">Starting and Growing a Career in Web Design</a></h2>
-                        <a class="theme-btn theme-btn-two" href="#">Read more <i class="ri-arrow-right-line"></i></a>
+                        <h3 style="color: #404041;">Posted on Aug 28</h3>
+                        <h2 style="color: #404041;"><a class="link-decoration" href="#">Starting and Growing a Career in Web Design</a></h2>
+                        <a class="theme-btn theme-btn-two" href="#" style="color: #404041;">Read more <i class="ri-arrow-right-line"></i></a>
                     </div>
                 </div>
             </div>
@@ -405,7 +326,7 @@
                 <div class="col-lg-6">
                     <div class="blog-post-img">
                         <a href="#">
-                            <img src="assets/images/blog/blog3.jpg" alt="">
+                            <img src="{% static 'images/blog/blog3.jpg' %}" alt="">
                         </a>
                         <div class="blog-post-category">
                             <a href="#">Design</a>
@@ -414,9 +335,9 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="blog-post-caption">
-                        <h3>Posted on Aug 28</h3>
-                        <h2><a class="link-decoration" href="#">How Can Designers Prepare for the Future?</a></h2>
-                        <a class="theme-btn theme-btn-two" href="#">Read more <i class="ri-arrow-right-line"></i></a>
+                        <h3 style="color: #404041;">Posted on Aug 28</h3>
+                        <h2 style="color: #404041;"><a class="link-decoration" href="#">How Can Designers Prepare for the Future?</a></h2>
+                        <a class="theme-btn theme-btn-two" href="#" style="color: #404041;">Read more <i class="ri-arrow-right-line"></i></a>
                     </div>
                 </div>
             </div>
@@ -540,20 +461,7 @@
     <footer class="main-footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer-top">
-                        <p> Have a project in mind?</p>
-                        <h2><a href="mailto:hello@websitename.com">let's work</a></h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 col-sm-6">
-                    <p class="copy-left-text">Template by <a href="https://themeforest.net/user/creativepersonal/portfolio">Creative Personal®</a></p>
-                </div>
-                <div class="col-lg-6 col-sm-6">
-                    <p class="copy-right-text">&copy; Copyright 2024</p>
-                </div>
+                
             </div>
         </div>
     </footer>
