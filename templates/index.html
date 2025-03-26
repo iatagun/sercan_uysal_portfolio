@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<!--#404041 navbar background colour-->
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Nino - Modern Portfolio Template">
+    <meta name="keywords" content="personal, portfolio new, html, one page, bootstrap, new html template, design, creative, onepage, clean, modern">
+    <meta name="author" content="Tanvir Hossain">
+    <!-- PAGE TITLE -->
+    <title>Nino - Modern Portfolio Template</title>
+    
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/images/favicon.png' %}">
+    <!-- ALL GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- BOOTSTRAP CSS -->
+    
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <!-- FONT AWESOME CSS -->
+    
+    <link rel="stylesheet" href="{% static 'css/font-awesome-pro.css' %}" />
+    <!-- FONT AWESOME CSS -->
+    
+    <link rel="stylesheet" href="{% static 'css/fonts/remixicon.css' %}" />
+    <!-- MAGNIFIC CSS -->
+    
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popupc.css' %}">
+    <!-- NICE SELECT CSS -->
+    
+    <link rel="stylesheet" href="{% static 'css/nice-select.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/odometer-theme-defaultc.css' %}" />
+    <!-- ANIMATE CSS -->
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carouselc.min' %}" />
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/animatec.css' %}" />
+    <!-- MOBILE MENU CSS -->
+    
+    <link rel="stylesheet" href="{% static 'css/mobilemenu.css' %}" />
+    <!-- SLICK CSS -->
+    <link rel="stylesheet" href="{% static 'css/slick.min.css' %}" />
+    <!-- SPACING CSS -->
+    
+    <link rel="stylesheet" href="{% static 'css/spacing.css' %}" />
+    <!-- MAIN STYLE CSS -->
+    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/stylec.css' %}" />
+    <!-- RESPONSIVE CSS -->
+    
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- START PRELOADER AREA-->
+    <div class="preloader">
+        <svg viewbox="0 0 1000 1000" preserveaspectratio="none">
+            <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+        </svg>
+        <div class="preloader-heading">
+            <div class="load-text">
+                <span>L</span>
+                <span>o</span>
+                <span>a</span>
+                <span>d</span>
+                <span>i</span>
+                <span>n</span>
+                <span>g</span>
+            </div>
+        </div>
+    </div>
+    <!-- END PRELOADER AREA -->
+    <!-- START SCROOL UP DESIGN AREA -->
+    <div class="progress-wrap cursor-pointer">
+        <i class="ri-arrow-up-s-line"></i>
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+    <!-- / END SCROOL UP DESIGN AREA -->
+    <!-- START MAGIC CURSOR AND BALL AREA-->
+    <div id="magic-cursor">
+        <div id="ball"></div>
+    </div>
+    <!-- / END MAGIC CURSOR AND BALL AREA-->
+    <!-- START MENU DESIGN AREA-->
+    <header class="main-header">
+        <div class="header-upper" style="background-color: #404041;">
+            <div class="container">
+                <div class="header-inner">
+                    <div class="row align-items-center">
+                        <div class="col-xl-2 col-lg-2 col-md-6 col-6 col-sm-3">
+                            <div class="logo-area">
+                                <div class="logo">
+                                    <a href="index.html"><img src="{% static 'images/logo.png' %}" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-10 col-lg-10 col-md-6 col-6 col-sm-9">
+                            <div class="main-menu">
+                                <nav id="mobile-menu">
+                                    <ul>
+                                        <li><a href="index.html" class="linkstyle" style="color:white;">Home</a></li>
+                                        <li><a href="about.html" class="linkstyle"style="color:white;">about</a></li>
+                                        <li><a href="service.html" class="linkstyle" style="color:white;">services</a></li>
+                                        <li class="has-dropdown"><a href="projects.html" style="color:white;" class="linkstyle">projects</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="projects.html" style="color:white;">Projects List</a></li>
+                                                <li><a href="single-project.html" style="color:white;">Single Portfolio</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="blog.html" class="linkstyle" style="color:white;">Blog</a></li>
+                                        <li><a href="contact.html" class="linkstyle" style="color:white;">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="side-menu-icon d-lg-none text-end">
+                                <a href="javascript:void(0)" class="info-toggle-btn f-right sidebar-toggle-btn"><i class="fal fa-bars"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- // END MENU DESIGN AREA-->
+    <!-- START MOBILE MENU DESIGN AREA-->
+    <div class="sidebar__area">
+        <div class="sidebar__wrapper">
+            <div class="sidebar__close">
+                <button class="sidebar__close-btn" id="sidebar__close-btn">
+                    <i class="fal fa-times"></i>
+                </button>
+            </div>
+            <div class="sidebar__content mt-50 mb-20">
+                <div class="mobile-menu fix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="body-overlay"></div>
+    <!-- // END MOBILE MENU DESIGN AREA-->
+    <!-- START HEADER DESIGN AREA -->
+    <section id="home" class="main-hero-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- START HERO DESIGN AREA -->
+                    <div class="hero-content wow fadeInUp text-center delay-0-2s">
+                        <h2 style="color: #404041;">Sercan Uysal</h2>
+                    </div>
+                    <!-- / END HERO DESIGN AREA -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 pt-30">
+                    <!-- START HERO DESIGN AREA -->
+                    <div class="hero-content wow fadeInUp delay-0-2s">
+                        
+                    </div>
+                    <!-- / END HERO DESIGN AREA -->
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="{% static 'images/about/me.png' %}" style="width: 260px; min-width: 310px;"  alt="" >
+                    </div>
+                    <!-- / END HERO DESIGN AREA -->
+                </div>
+                <div class="col-lg-3 pt-30">
+                    
+                    <!-- / END HERO DESIGN AREA -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- / END HEADER DESIGN AREA -->
+    
+    <!-- START ABOUT DESIGN AREA -->
+    <section id="about" class="about-area" style="background-color: #404041;">
+        <div class="container">
+            <div class="row">
+                <!-- START ABOUT TEXT DESIGN AREA -->
+                <div class="col-lg-3 col-sm-3">
+                    <img src="{%static 'images/hak.gif' %}" alt="Computer man" style="width:300px;height:250px;">
+
+                </div>
+                <div class="col-lg-9 col-sm-9">
+                    <div class="about-content-part wow fadeInUp delay-0-2s">
+                        <p>Hakkımda</p>
+                        <p style="font-size: medium;">Ben Sercan Uysal. Gazi Üniversitesi Grafik Tasarım Öğretmenliği mezunuyum. Grafik tasarımla başladığım kariyerime, tutkum olan oyun geliştirme alanında devam ediyorum. 2010’da ODTÜ ATOM’da konsept sanatçısı olarak sektöre adım attım. O günden bu yana mobil ve PC oyunları için illüstrasyon, konsept tasarımı, 3D modelleme ve UI tasarımı üretiyorum.
+
+                            Ayrıca belgesel ve animasyon projelerinde görev aldım; farklı prodüksiyon süreçleri, görsel hikâye anlatımı bakışımı geliştirdi. Sanat yönetimi yaptığım projelerde estetik ve işlevselliği dengede tutmaya özen gösterdim.
+                            
+                            Blender, Adobe Photoshop, Illustrator ve Substance Painter gibi araçlarla çalışıyor; her projede yeni teknikler ve yaklaşımlar öğrenerek kendimi geliştirmeyi sürdürüyorum.</p>
+                    </div>
+                    
+                </div>
+                <!-- / END ABOUT TEXT DESIGN AREA -->
+            </div>
+        </div>
+    </section>
+    <!-- / END ABOUT DESIGN AREA -->
+    <!-- START SERVICE DESIGN AREA -->
+    <section id="my-skills">
+        <div class="ms-container">
+          <div class="ms-title">
+            <h2 style="color: #404041;">My Skills</h2>
+          </div>
+          <div class="ms-row">
+            <div class="ms-col">
+              <h4 class="ms-subtitle" style="color: #404041;">Every Day is a New Challenge</h4>
+              <p style="color: #404041;">
+                In id nulla magna. Nullam posuere fermentum mattis. Nunc id dui at sapien faucibus fermentum
+                ut vel diam. Nullam tempus, nunc id efficitur sagittis, urna est ultricies eros, ac porta
+                sem turpis quis leo. Nulla in feugiat elit.
+              </p>
+              <p style="color: #404041;">
+                Phasellus accumsan scelerisque dolor, quis mattis justo bibendum non. Nulla sollicitudin
+                turpis in enim elementum varius. Vestibulum ante ipsum primis in faucibus orci luctus
+                et ultrices posuere cubilia Curae.
+              </p>
+              <a href="#contact" class="ms-btn" style="color: #404041;">Contact Me</a>
+            </div>
+            <div class="ms-col">
+              <div class="ms-progress" data-progress-width="100%">
+                <h5 class="ms-progress-title">Webdesign</h5>
+                <div class="ms-progress-bar" style="width: 100%;"></div>
+              </div>
+              <div class="ms-progress" data-progress-width="80%">
+                <h5 class="ms-progress-title">Photography</h5>
+                <div class="ms-progress-bar" style="width: 80%;"></div>
+              </div>
+              <div class="ms-progress" data-progress-width="90%">
+                <h5 class="ms-progress-title">Coding</h5>
+                <div class="ms-progress-bar" style="width: 90%;"></div>
+              </div>
+              <div class="ms-progress" data-progress-width="60%">
+                <h5 class="ms-progress-title">Copywriting</h5>
+                <div class="ms-progress-bar" style="width: 60%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+    <!-- / END SERVICE DESIGN AREA -->
+    <!-- Becerilerim ve kullandığım programlar olacak -->
+    <div class="projects-area" id="portfolio" style="background-color: #404041;">
+        <div class="custom-icon">
+            <img src="{% static 'images/custom/work-scribble.svg' %}" alt="custom">
+        </div>
+        <div class="container-fluid">
+            <div class="row g-4 portfolio-grid">
+                <!-- START SINGLE PORTFOLIO DESIGN AREA -->
+                <div class="col-md-6 col-xl-6 portfolio-item category-1">
+                    <a href="{% static 'images/projects/work1.jpg' %}" class="work-popup">
+                        <div class="portfolio-box">
+                            <!-- Image -->
+                            <img src="{% static 'images/projects/work1.jpg' %}" alt="" data-rjs="2">
+                            <!-- Category -->
+                            <span class="portfolio-category">Branding</span>
+                            <!-- Caption -->
+                            <div class="portfolio-caption">
+                                <h1>Glasses of Cocktail</h1>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- // beceriler ve programlar bitti -->
+                <!-- START SINGLE PORTFOLIO DESIGN AREA -->
+                <div class="col-md-6 col-xl-6 portfolio-item category-2">
+                    <a href="single-project.html">
+                        <div class="portfolio-box">
+                            <!-- Image -->
+                            <img src="{% static 'images/projects/work2.jpg' %}" alt="" data-rjs="2">
+                            <!-- Category -->
+                            <span class="portfolio-category">Mockup</span>
+                            <!-- Caption -->
+                            <div class="portfolio-caption">
+                                <h1>A Branch with Flowers</h1>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- // END SINGLE PORTFOLIO DESIGN AREA -->
+                <!-- START SINGLE PORTFOLIO DESIGN AREA -->
+                <div class="col-md-6 col-xl-4 portfolio-item category-2">
+                    <a href="https://www.youtube.com/watch?v=qZEPs3vmYB4" class="popup-youtube">
+                        <div class="portfolio-box">
+                            <!-- Image -->
+                            <img src="{% static 'images/projects/work3.jpg' %}" alt="" data-rjs="2">
+                            <!-- Category -->
+                            <span class="portfolio-category">Video</span>
+                            <!-- Caption -->
+                            <div class="portfolio-caption">
+                                <h1>Orange Rose Flower</h1>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- // END SINGLE PORTFOLIO DESIGN AREA -->
+                <!-- START SINGLE PORTFOLIO DESIGN AREA -->
+                <div class="col-md-6 col-xl-4 portfolio-item category-1">
+                    <a href="{% static 'images/projects/work4.jpg' %}" class="work-popup">
+                        <div class="portfolio-box">
+                            <!-- Image -->
+                            <img src="{% static 'images/projects/work4.jpg' %}" alt="" data-rjs="2">
+                            <!-- Category -->
+                            <span class="portfolio-category">Branding</span>
+                            <!-- Caption -->
+                            <div class="portfolio-caption">
+                                <h1>Green Plant on a Desk</h1>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- // END SINGLE PORTFOLIO DESIGN AREA -->
+                <!-- START SINGLE PORTFOLIO DESIGN AREA -->
+                <div class="col-md-6 col-xl-4 portfolio-item category-2">
+                    <a href="{% static 'images/projects/work5.jpg' %}" class="work-popup">
+                        <div class="portfolio-box">
+                            <!-- Image -->
+                            <img src="{% static 'images/projects/work5.jpg' %}" alt="" data-rjs="2">
+                            <!-- Category -->
+                            <span class="portfolio-category">Mockup</span>
+                            <!-- Caption -->
+                            <div class="portfolio-caption">
+                                <h1>Orange Rose Flower</h1>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- // END SINGLE PORTFOLIO DESIGN AREA -->
+            </div>
+        </div>
+    </div>
+    <!-- // END PORTFOLIO DESIGN AREA -->
+    
+   
+    <!-- START VLOG DESIGN AREA -->
+    <section class="blog-area" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="section-title wow fadeInUp delay-0-2s">
+                        <h2 style="color: #404041;">Stories</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- START SINGLE VLOG DESIGN AREA -->
+            <div class="row blog-post-box align-items-center">
+                <div class="col-lg-6">
+                    <div class="blog-post-img">
+                        <a href="#">
+                            <img src="assets/images/blog/blog1.jpg" alt="">
+                        </a>
+                        <div class="blog-post-category">
+                            <a href="#">Help</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="blog-post-caption">
+                        <h3>Posted on Aug 28</h3>
+                        <h2><a class="link-decoration" href="#">Create a Landing Page That Performs Great</a></h2>
+                        <a class="theme-btn theme-btn-two" href="#">Read more <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- START SINGLE VLOG DESIGN AREA -->
+            <!-- START SINGLE VLOG DESIGN AREA -->
+            <div class="row blog-post-box align-items-center">
+                <div class="col-lg-6">
+                    <div class="blog-post-img">
+                        <a href="#">
+                            <img src="assets/images/blog/blog2.jpg" alt="">
+                        </a>
+                        <div class="blog-post-category">
+                            <a href="#">Branding</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="blog-post-caption">
+                        <h3>Posted on Aug 28</h3>
+                        <h2><a class="link-decoration" href="#">Starting and Growing a Career in Web Design</a></h2>
+                        <a class="theme-btn theme-btn-two" href="#">Read more <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- START SINGLE VLOG DESIGN AREA -->
+            <!-- START SINGLE VLOG DESIGN AREA -->
+            <div class="row blog-post-box align-items-center">
+                <div class="col-lg-6">
+                    <div class="blog-post-img">
+                        <a href="#">
+                            <img src="assets/images/blog/blog3.jpg" alt="">
+                        </a>
+                        <div class="blog-post-category">
+                            <a href="#">Design</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="blog-post-caption">
+                        <h3>Posted on Aug 28</h3>
+                        <h2><a class="link-decoration" href="#">How Can Designers Prepare for the Future?</a></h2>
+                        <a class="theme-btn theme-btn-two" href="#">Read more <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- START SINGLE VLOG DESIGN AREA -->
+        </div>
+    </section>
+    <!-- / END VLOG DESIGN AREA -->
+    <!-- START CONTACT DESIGN AREA -->
+    <section id="contact" class="contact-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="section-title section-black-title wow fadeInUp delay-0-2s">
+                        <h2>Contact Me</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="contact-content-part  wow fadeInUp delay-0-2s">
+                        <!-- START CONTACT SINGLEDESIGN AREA -->
+                        <div class="single-contact wow fadeInUp" data-wow-delay=".2s">
+                            <span class="circle-btn">
+                                <i class="ri-map-pin-line"></i>
+                            </span>
+                            <h2>our office:</h2>
+                            <p>Jurain,Dhaka Bangladesh</p>
+                        </div>
+                        <!-- / END CONTACT SINGLEDESIGN AREA -->
+                        <!-- START CONTACT SINGLEDESIGN AREA -->
+                        <div class="single-contact wow fadeInUp" data-wow-delay=".4s">
+                            <span class="circle-btn">
+                                <i class="ri-headphone-line"></i>
+                            </span>
+                            <h2>contact number:</h2>
+                            <p>+1234321321</p>
+                        </div>
+                        <!-- / END CONTACT SINGLEDESIGN AREA -->
+                        <!-- START CONTACT SINGLEDESIGN AREA -->
+                        <div class="single-contact wow fadeInUp" data-wow-delay=".6s">
+                            <span class="circle-btn">
+                                <i class="ri-mail-line"></i>
+                            </span>
+                            <h2>Email us:</h2>
+                            <p>websitename@mail.com</p>
+                        </div>
+                        <!-- / END CONTACT SINGLEDESIGN AREA -->
+                        <!-- START CONTACT SINGLEDESIGN AREA -->
+                        <div class="single-contact wow fadeInUp" data-wow-delay=".6s">
+                            <h2>Socials</h2>
+                            <div class="about-social">
+                            <ul>
+                                <li><a href=""><i class="ri-facebook-circle-fill"></i></a></li>
+                                <li><a href=""><i class="ri-twitter-x-line"></i></a></li>
+                                <li><a href=""><i class="ri-linkedin-fill"></i></a></li>
+                                <li><a href=""><i class="ri-github-line"></i></a></li>
+                            </ul>
+                        </div>
+                        </div>
+                        <!-- / END CONTACT SINGLEDESIGN AREA -->
+                    </div>
+                </div>
+                <!-- START CONTACT FORM DESIGN AREA -->
+                <div class="col-lg-8">
+                    <div class="contact-form contact-form-area wow fadeInUp delay-0-4s">
+                        <form id="contactForm" class="contact-form" action="#" method="post">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="name">Full Name</label>
+                                        <input type="text" id="name" class="form-control" value="" placeholder="Steve Milner" required="" data-error="Please enter your Name" />
+                                        <label for="name" class="for-icon"><i class="far fa-user"></i></label>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email">Email Address</label>
+                                        <input type="email" id="email" class="form-control" value="" placeholder="hello@websitename.com" required="" data-error="Please enter your Email" />
+                                        <label for="email" class="for-icon"><i class="far fa-envelope"></i></label>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="name">Subject</label>
+                                        <input type="text" id="subject" class="form-control" value="" placeholder="Your Subject" required="" data-error="Please enter your Name" />
+                                        <label for="name" class="for-icon"><i class="far fa-user"></i></label>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="message">Your Message</label>
+                                        <textarea name="message" id="message" class="form-control" rows="4" placeholder="Write Your message" required="" data-error="Please Write your Message"></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group mb-0">
+                                        <button type="submit" class="theme-btn">
+                                            Send Me Message <i class="ri-mail-line"></i>
+                                        </button>
+                                        <div id="msgSubmit" class="hidden"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <p class="input-success">We have received your mail, We will get back to you soon!</p>
+                                    <p class="input-error">Sorry, Message could not send! Please try again.</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- / END CONTACT FORM DESIGN AREA -->
+            </div>
+        </div>
+    </section>
+    <!-- / END CONTACT DESIGN AREA -->
+    <!-- START FOOTER DESIGN AREA -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-top">
+                        <p> Have a project in mind?</p>
+                        <h2><a href="mailto:hello@websitename.com">let's work</a></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-sm-6">
+                    <p class="copy-left-text">Template by <a href="https://themeforest.net/user/creativepersonal/portfolio">Creative Personal®</a></p>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <p class="copy-right-text">&copy; Copyright 2024</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- / END FOOTER DESIGN AREA -->
+    <!-- JQUERY JS -->
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <!-- BOOTSTRAP JS-->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- APPEAR JS -->
+    <script src="{% static 'js/appear.min.js' %}"></script>
+    <!-- MAGNIFICANT JS -->
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <!-- MOBILE MENU JS-->
+    <script src="{% static 'js/mobilemenu.js' %}"></script>
+    <!-- GSAP AND LOCOMOTIV JS-->
+    <script src="{% static 'js/gsap.min.js' %}"></script>
+    <script src="{% static 'js/ScrollTrigger.min.js' %}"></script>
+    <script src="{% static 'js/lenis.js' %}"></script>
+    <!-- SLICK JS-->
+    <script src="{% static 'js/slick.min.js' %}"></script>
+    <!-- NICE SELECT JS-->
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <!-- IMAGE LOADER JS-->
+    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+    <!-- ISOTOPE JS-->
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <!--  WOW ANIMATION JS-->
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <!-- SCRIPT JS-->
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>
