@@ -16,13 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from home import views
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 # django admin changes
-admin.site.site_header = "Login to Burhan"
-admin.site.site_title = "Welocom to DashBord"
-admin.site.index_title = "Welocom to Portal"
+admin.site.site_header = "Login to Sercan Uysal"
+admin.site.site_title = "Welcome to DashBord"
+admin.site.index_title = "Welcome to Portal"
 
 
 
@@ -31,10 +32,12 @@ urlpatterns = [
     path('project', views.project, name='project'),
     path('about', views.about, name='about'),
     path('contact', views.contact, name='contact'),
-    path('#contact', views.contact, name='contact'),
     path('service', views.service, name='service'),
     path('project', views.project, name='project'),
+    path('projects', views.project, name='projects'),
     path('blog', views.blog, name='blog'),
     # path('skills', views.skills, name='skills'),
     # path('contact', views.contact, name='contact'),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-
+<!--#404041 navbar background colour-->
 <head>
     <!-- META -->
     <meta charset="utf-8">
@@ -11,7 +11,7 @@
     <meta name="keywords" content="personal, portfolio new, html, one page, bootstrap, new html template, design, creative, onepage, clean, modern">
     <meta name="author" content="Tanvir Hossain">
     <!-- PAGE TITLE -->
-    <title>Nino - Modern Portfolio Template</title>
+    <title>Sercan  Uysal</title>
     
     <link rel="icon" type="image/x-icon" href="{% static 'assets/images/favicon.png' %}">
     <!-- ALL GOOGLE FONTS -->
@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="{% static 'css/odometer-theme-defaultc.css' %}" />
     <!-- ANIMATE CSS -->
     
-    <link rel="stylesheet" href="{% static 'css/owl.carouselc.min' %}" />
+    <link rel="stylesheet" href="{% static 'css/owl.carouselc.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/animate.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/animatec.css' %}" />
     <!-- MOBILE MENU CSS -->
@@ -65,11 +65,11 @@
 
 <body>
     <!-- START PRELOADER AREA-->
-    <div class="preloader">
-        <svg viewbox="0 0 1000 1000" preserveaspectratio="none">
-            <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+    <div class="preloader" style="background-color: #404041;">
+        <svg viewbox="0 0 1000 1000" preserveaspectratio="none" style="background-color: #404041;">
+            <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z" style="background-color: #404041;"></path>
         </svg>
-        <div class="preloader-heading">
+        <div class="preloader-heading" style="background-color: #404041;">
             <div class="load-text">
                 <span>L</span>
                 <span>o</span>
@@ -97,14 +97,14 @@
     <!-- / END MAGIC CURSOR AND BALL AREA-->
     <!-- START MENU DESIGN AREA-->
     <header class="main-header">
-        <div class="header-upper">
+        <div class="header-upper" style="background-color: #404041;">
             <div class="container">
                 <div class="header-inner">
                     <div class="row align-items-center">
                         <div class="col-xl-2 col-lg-2 col-md-6 col-6 col-sm-3">
                             <div class="logo-area">
                                 <div class="logo">
-                                    <a href="index.html"><img src="assets/images/logo.png" alt=""></a>
+                                    <a href="{% url 'home' %}">Sercan Uysal</a>
                                 </div>
                             </div>
                         </div>
@@ -112,17 +112,15 @@
                             <div class="main-menu">
                                 <nav id="mobile-menu">
                                     <ul>
-                                        <li><a href="index.html" class="linkstyle">Home</a></li>
-                                        <li><a href="about.html" class="linkstyle">about</a></li>
-                                        <li><a href="service.html" class="linkstyle">services</a></li>
-                                        <li class="has-dropdown"><a href="projects.html" class="linkstyle">projects</a>
+                                        <li><a href="{% url 'home' %}" class="linkstyle" style="color:white;">Anasayfa</a></li>
+                                        <li><a href="{% url 'about' %}" class="linkstyle"style="color:white;">Hakkımda</a></li>
+                                        <li class="has-dropdown"><a href="{% url 'project' %}" style="color:white;" class="linkstyle">Portfolyo</a>
                                             <ul class="sub-menu">
-                                                <li><a href="projects.html">Projects List</a></li>
-                                                <li><a href="single-project.html">Single Portfolio</a></li>
+                                                <li><a href="projects.html" style="color:white;">2D</a></li>
+                                                <li><a href="single-project.html" style="color:white;">3D</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="blog.html" class="linkstyle">Blog</a></li>
-                                        <li><a href="contact.html" class="linkstyle">Contact</a></li>
+                                        <li><a href="{% url 'contact' %}" class="linkstyle" style="color:white;">Contact</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -151,200 +149,124 @@
     </div>
     <div class="body-overlay"></div>
     <!-- // END MOBILE MENU DESIGN AREA-->
-    <!-- START SINGLE PAGE DESIGN AREA -->
-    <section class="single-page-hero-area">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12">
-                    <h2>About Me</h2>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- // END SINGLE PAGE DESIGN AREA -->
-    <!-- START RESUME EXPERIENCE DESIGN AREA -->
-    <div class="resume-area no-padding" id="resume">
+    <!-- START HEADER DESIGN AREA -->
+    <section id="home" class="main-hero-area">
         <div class="container">
             <div class="row">
-                <div class="col-xl-6 col-md-6">
-                    <div class="resume-wrapper wow fadeInUp delay-0-2s">
-                        <!-- START SINGLE EXPERIENCE DESIGN AREA -->
-                        <div class="resume-box">
-                            <span class="resume-date">2020 - Present</span>
-                            <h2>Web Developer & Business Partner (Full-Time)</h2>
-                            <span>@ Envato Marketplace</span>
-                            <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                        <!-- / END SINGLE EXPERIENCE DESIGN AREA -->
-                        <!-- START SINGLE EXPERIENCE DESIGN AREA -->
-                        <div class="resume-box">
-                            <span class="resume-date">2018 - 2020</span>
-                            <h2>CEO & Founder</h2>
-                            <span>@ Thememaster LTD</span>
-                            <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                        <!-- / END SINGLE EXPERIENCE DESIGN AREA -->
-                        <!-- START SINGLE EXPERIENCE DESIGN AREA -->
-                        <div class="resume-box">
-                            <span class="resume-date">2012 - 2028</span>
-                            <h2>Senior Designer</h2>
-                            <span>@ Google</span>
-                            <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                        <!-- / END SINGLE EXPERIENCE DESIGN AREA -->
+                <div class="col-lg-12">
+                    <!-- START HERO DESIGN AREA -->
+                    <div class="hero-content wow fadeInUp text-center delay-0-2s">
+                        <h2 style="color: #404041;">Sercan Uysal</h2>
                     </div>
-                </div>
-                <div class="col-xl-6 col-md-6">
-                    <div class="resume-wrapper wow fadeInUp delay-0-4s">
-                        <!-- START SINGLE EDUCATION DESIGN AREA -->
-                        <div class="resume-box">
-                            <span class="resume-date">2020 - Present</span>
-                            <h2>Bachelor Degree of Science</h2>
-                            <span>@ University of London</span>
-                            <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                        <!-- / END SINGLE EDUCATION DESIGN AREA -->
-                        <!-- START SINGLE EDUCATION DESIGN AREA -->
-                        <div class="resume-box">
-                            <span class="resume-date">2018 - 2020</span>
-                            <h2>Master Degree of Design</h2>
-                            <span>@ Envato Education</span>
-                            <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                        <!-- / END SINGLE EDUCATION DESIGN AREA -->
-                        <!-- START SINGLE EDUCATION DESIGN AREA -->
-                        <div class="resume-box">
-                            <span class="resume-date">2015 - 2018</span>
-                            <h2>Degree Of UI & UX</h2>
-                            <span>@ University of world</span>
-                            <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                        <!-- / END SINGLE EDUCATION DESIGN AREA -->
-                    </div>
+                    <!-- / END HERO DESIGN AREA -->
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- / END RESUME EXPERIENCE DESIGN AREA -->
-    <!-- START SKILL DESIGN AREA -->
-    <section id="skills" class="skill-area">
-        <div class="container">
-            <div class="container-inner">
-                <div class="row">
-                    <div class="col-xl-12 col-lg-12">
-                        <div class="section-title section-black-title mb-40 wow fadeInUp delay-0-2s">
-                            <h2>Professional Skills</h2>
-                        </div>
+            <div class="row">
+                <div class="col-lg-3 pt-30">
+                    <!-- START HERO DESIGN AREA -->
+                    <div class="hero-content wow fadeInUp delay-0-2s">
+                        
                     </div>
+                    <!-- / END HERO DESIGN AREA -->
                 </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="skill-items-wrap">
-                            <div class="row">
-                                <div class="col-xl-3 col-lg-4 col-md-3 col-sm-4 col-6">
-                                    <div class="skill-item wow fadeInUp delay-0-2s">
-                                        <img src="assets/images/skills/skill1.png" alt="Skill" />
-                                        <h5>Figma</h5>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-4 col-md-3 col-sm-4 col-6">
-                                    <div class="skill-item wow fadeInUp delay-0-3s">
-                                        <img src="assets/images/skills/skill2.png" alt="Skill" />
-                                        <h5>Tailwand</h5>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-4 col-md-3 col-sm-4 col-6">
-                                    <div class="skill-item wow fadeInUp delay-0-4s">
-                                        <img src="assets/images/skills/skill3.png" alt="Skill" />
-                                        <h5>Photoshop</h5>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-4 col-md-3 col-sm-4 col-6">
-                                    <div class="skill-item wow fadeInUp delay-0-5s">
-                                        <img src="assets/images/skills/skill4.png" alt="Skill" />
-                                        <h5>WordPress</h5>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-4 col-md-3 col-sm-4 col-6">
-                                    <div class="skill-item wow fadeInUp delay-0-2s">
-                                        <img src="assets/images/skills/skill5.png" alt="Skill" />
-                                        <h5>Angular</h5>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-4 col-md-3 col-sm-4 col-6">
-                                    <div class="skill-item wow fadeInUp delay-0-3s">
-                                        <img src="assets/images/skills/skill6.png" alt="Skill" />
-                                        <h5>Webflow</h5>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-4 col-md-3 col-sm-4 col-6">
-                                    <div class="skill-item wow fadeInUp delay-0-4s">
-                                        <img src="assets/images/skills/skill7.png" alt="Skill" />
-                                        <h5>Python</h5>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-4 col-md-3 col-sm-4 col-6">
-                                    <div class="skill-item wow fadeInUp delay-0-5s">
-                                        <img src="assets/images/skills/skill8.png" alt="Skill" />
-                                        <h5>Sketch</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="{% static 'images/about/me.png' %}" style="width: 260px; min-width: 310px;"  alt="" >
                     </div>
+                    <!-- / END HERO DESIGN AREA -->
+                </div>
+                <div class="col-lg-3 pt-30">
+                    
+                    <!-- / END HERO DESIGN AREA -->
                 </div>
             </div>
         </div>
     </section>
-    <!-- / END SKILL DESIGN AREA -->
-    <!-- START FOOTER DESIGN AREA -->
+    <!-- / END HEADER DESIGN AREA -->
+    
+    <!-- START ABOUT DESIGN AREA -->
+    <section id="about" class="about-area" style="background-color: #404041;">
+        <div class="container">
+            <div class="row">
+                <!-- START ABOUT TEXT DESIGN AREA -->
+                <div class="col-lg-3 col-sm-3">
+                    <img src="{% static 'images/hak.gif' %}" alt="{{ about_info.name }}" style="width:300px;height:250px;">
+
+                </div>
+                <div class="col-lg-9 col-sm-9">
+                    <div class="about-content-part wow fadeInUp delay-0-2s">
+                        <p>{{title}}</p>
+                        <p style="font-size: medium;"> {{detailed_description}}</p>
+                    </div>
+                    
+                </div>
+                <!-- / END ABOUT TEXT DESIGN AREA -->
+            </div>
+        </div>
+    </section>
+    <!-- / END ABOUT DESIGN AREA -->
+    <!-- START SERVICE DESIGN AREA -->
+    <section id="my-skills">
+        <div class="ms-container">
+            <div class="ms-title">
+                <h2 style="color: #404041;">{{ skill_section.title }}</h2>
+            </div>
+            <div class="ms-row">
+                <div class="ms-col">
+                    <h4 style="color: #404041;">{{ skill_section.subtitle }}</h4>
+                    <p style="color: #404041;">{{ skill_section.description }}</p>
+                    {% if skill_section.additional_description %}
+                        <p style="color: #404041;">{{ skill_section.additional_description }}</p>
+                    {% endif %}
+                </div>
+                <div class="ms-col">
+                {% for skill in skill_section.skills.all %}
+            <div class="ms-progress" data-progress-width="{{ skill.proficiency_percentage }}%">
+                <h5 class="ms-progress-title">
+                    {{ skill.name }} - {{ skill.proficiency_percentage }}%
+                </h5>
+            <div class="ms-progress-bar" style="width: {{ skill.proficiency_percentage|default:0 }}%;"></div>
+        </div>
+    {% endfor %}
+</div>
+            </div>
+        </div>
+    </section>
+      
     <footer class="main-footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer-top">
-                        <p> Have a project in mind?</p>
-                        <h2><a href="mailto:hello@websitename.com">let's work</a></h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 col-sm-6">
-                    <p class="copy-left-text">Template by <a href="https://themeforest.net/user/creativepersonal/portfolio">Creative Personal®</a></p>
-                </div>
-                <div class="col-lg-6 col-sm-6">
-                    <p class="copy-right-text">&copy; Copyright 2024</p>
-                </div>
+                
             </div>
         </div>
     </footer>
     <!-- / END FOOTER DESIGN AREA -->
     <!-- JQUERY JS -->
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
     <!-- BOOTSTRAP JS-->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <!-- APPEAR JS -->
-    <script src="assets/js/appear.min.js"></script>
+    <script src="{% static 'js/appear.min.js' %}"></script>
     <!-- MAGNIFICANT JS -->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
     <!-- MOBILE MENU JS-->
-    <script src="assets/js/mobilemenu.js"></script>
+    <script src="{% static 'js/mobilemenu.js' %}"></script>
     <!-- GSAP AND LOCOMOTIV JS-->
-    <script src="assets/js/gsap.min.js"></script>
-    <script src="assets/js/ScrollTrigger.min.js"></script>
-    <script src="assets/js/lenis.js"></script>
+    <script src="{% static 'js/gsap.min.js' %}"></script>
+    <script src="{% static 'js/ScrollTrigger.min.js' %}"></script>
+    <script src="{% static 'js/lenis.js' %}"></script>
     <!-- SLICK JS-->
-    <script src="assets/js/slick.min.js"></script>
+    <script src="{% static 'js/slick.min.js' %}"></script>
     <!-- NICE SELECT JS-->
-    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
     <!-- IMAGE LOADER JS-->
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
     <!-- ISOTOPE JS-->
-    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
     <!--  WOW ANIMATION JS-->
-    <script src="assets/js/wow.min.js"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
     <!-- SCRIPT JS-->
-    <script src="assets/js/script.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 
 </html>

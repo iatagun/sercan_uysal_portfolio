@@ -11,7 +11,7 @@
     <meta name="keywords" content="personal, portfolio new, html, one page, bootstrap, new html template, design, creative, onepage, clean, modern">
     <meta name="author" content="Tanvir Hossain">
     <!-- PAGE TITLE -->
-    <title>Nino - Modern Portfolio Template</title>
+    <title>Sercan  Uysal</title>
     
     <link rel="icon" type="image/x-icon" href="{% static 'assets/images/favicon.png' %}">
     <!-- ALL GOOGLE FONTS -->
@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="{% static 'css/odometer-theme-defaultc.css' %}" />
     <!-- ANIMATE CSS -->
     
-    <link rel="stylesheet" href="{% static 'css/owl.carouselc.min' %}" />
+    <link rel="stylesheet" href="{% static 'css/owl.carouselc.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/animate.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/animatec.css' %}" />
     <!-- MOBILE MENU CSS -->
@@ -65,11 +65,11 @@
 
 <body>
     <!-- START PRELOADER AREA-->
-    <div class="preloader">
-        <svg viewbox="0 0 1000 1000" preserveaspectratio="none">
-            <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+    <div class="preloader" style="background-color: #404041;">
+        <svg viewbox="0 0 1000 1000" preserveaspectratio="none" style="background-color: #404041;">
+            <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z" style="background-color: #404041;"></path>
         </svg>
-        <div class="preloader-heading">
+        <div class="preloader-heading" style="background-color: #404041;">
             <div class="load-text">
                 <span>L</span>
                 <span>o</span>
@@ -104,7 +104,7 @@
                         <div class="col-xl-2 col-lg-2 col-md-6 col-6 col-sm-3">
                             <div class="logo-area">
                                 <div class="logo">
-                                    <a href="index.html"><img src="{% static 'images/logo.png' %}" alt=""></a>
+                                    <a href="{% url 'home' %}">Sercan Uysal</a>
                                 </div>
                             </div>
                         </div>
@@ -112,16 +112,14 @@
                             <div class="main-menu">
                                 <nav id="mobile-menu">
                                     <ul>
-                                        <li><a href="{% url 'home' %}" class="linkstyle" style="color:white;">Home</a></li>
-                                        <li><a href="{% url 'about' %}" class="linkstyle"style="color:white;">about</a></li>
-                                        <li><a href="{% url 'service' %}" class="linkstyle" style="color:white;">services</a></li>
-                                        <li class="has-dropdown"><a href="{% url 'project' %}" style="color:white;" class="linkstyle">projects</a>
+                                        <li><a href="{% url 'home' %}" class="linkstyle" style="color:white;">Anasayfa</a></li>
+                                        <li><a href="{% url 'about' %}" class="linkstyle"style="color:white;">Hakkımda</a></li>
+                                        <li class="has-dropdown"><a href="{% url 'project' %}" style="color:white;" class="linkstyle">Portfolyo</a>
                                             <ul class="sub-menu">
-                                                <li><a href="projects.html" style="color:white;">Projects List</a></li>
-                                                <li><a href="single-project.html" style="color:white;">Single Portfolio</a></li>
+                                                <li><a href="projects.html" style="color:white;">2D</a></li>
+                                                <li><a href="single-project.html" style="color:white;">3D</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="{% url 'blog' %}" class="linkstyle" style="color:white;">Blog</a></li>
                                         <li><a href="{% url 'contact' %}" class="linkstyle" style="color:white;">Contact</a></li>
                                     </ul>
                                 </nav>
@@ -228,7 +226,7 @@
             <h5 class="ms-progress-title">
                 {{ skill.name }} - {{ skill.proficiency_percentage }}%
             </h5>
-            <div class="ms-progress-bar" style="width: {{ skill.proficiency_percentage }}%;"></div>
+            <div class="ms-progress-bar" style="width: {{ skill.proficiency_percentage|default:0 }}%;"></div>
         </div>
     {% endfor %}
 </div>
@@ -237,113 +235,46 @@
     </section>
       
     <!-- / END SERVICE DESIGN AREA -->
-    <!-- Becerilerim ve kullandığım programlar olacak -->
     <div class="projects-area" id="portfolio" style="background-color: #404041;">
         <div class="custom-icon">
             <img src="{% static 'images/custom/work-scribble.svg' %}" alt="custom">
         </div>
         <div class="container-fluid">
             <div class="row g-4 portfolio-grid">
-                {% for category in categories %}
-                    {% for project in category.projects.all %}
-                    <div class="col-md-6 col-xl-4 portfolio-item">
-                        {% if project.link %}
-                            <a href="{{ project.link }}" {% if project.is_video %} class="popup-youtube"{% else %}class="work-popup"{% endif %}>
-                        {% else %}
-                            <a href="{{ project.image.url }}" class="work-popup">
-                        {% endif %}
-                            <div class="portfolio-box">
-                                <img src="{{ project.image.url }}" alt="{{ project.title }}">
-                                <span class="portfolio-category">{{ category.name }}</span>
-                                <div class="portfolio-caption">
-                                    <h1>{{ project.title }}</h1>
-                                </div>
+                {% for project in projects %}
+                <div class="col-md-6 col-xl-4 portfolio-item">
+                    {% if project.link %}
+                        <a href="{{ project.link }}" {% if project.is_video %} class="popup-youtube"{% else %}class="work-popup"{% endif %}>
+                    {% else %}
+                        <a href="{{ project.image.url }}" class="work-popup">
+                    {% endif %}
+                        <div class="portfolio-box" style="width:100%; height:250px; overflow:hidden; position:relative;">
+                            <img src="{{ project.image.url }}" alt="{{ project.title }}" style="width:100%; height:100%; object-fit:cover; object-position:center;">
+                            <span class="portfolio-category">{{ project.category.name }}</span>
+                            <div class="portfolio-caption">
+                                <h1>{{ project.title }}</h1>
                             </div>
-                        </a>
-                    </div>
-                    {% endfor %}
+                        </div>
+                    </a>
+                </div>
                 {% endfor %}
+            </div>
+            <div class="row mt-4">
+                <div class="col-lg-12 text-center">
+                    <a href="{% url 'projects' %}" class="btn btn-primary">Daha Fazla</a>
+                </div>
             </div>
         </div>
     </div>
+    
+    
     <!-- // END PORTFOLIO DESIGN AREA -->
     
    
     <!-- START VLOG DESIGN AREA -->
-    <section class="blog-area" style="background-color: #f8f9fa;">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12 col-lg-12">
-                    <div class="section-title wow fadeInUp delay-0-2s">
-                        <h2 style="color: #404041;">Stories</h2>
-                    </div>
-                </div>
-            </div>
-            <!-- START SINGLE VLOG DESIGN AREA -->
-            <div class="row blog-post-box align-items-center">
-                <div class="col-lg-6">
-                    <div class="blog-post-img">
-                        <a href="#">
-                            <img src="{% static 'images/blog/blog1.jpg' %}" alt="">
-                        </a>
-                        <div class="blog-post-category">
-                            <a href="#">Help</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="blog-post-caption">
-                        <h3 style="color: #404041;">Posted on Aug 28</h3>
-                        <h2><a class="link-decoration" href="#" style="color: #404041;">Create a Landing Page That Performs Great</a></h2>
-                        <a class="theme-btn theme-btn-two" href="#"style="color: #404041;">Read more <i class="ri-arrow-right-line"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- START SINGLE VLOG DESIGN AREA -->
-            <!-- START SINGLE VLOG DESIGN AREA -->
-            <div class="row blog-post-box align-items-center">
-                <div class="col-lg-6">
-                    <div class="blog-post-img">
-                        <a href="#">
-                            <img src="{% static 'images/blog/blog2.jpg' %}" alt="">
-                        </a>
-                        <div class="blog-post-category">
-                            <a href="#" style="color: #404041;">Branding</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="blog-post-caption">
-                        <h3 style="color: #404041;">Posted on Aug 28</h3>
-                        <h2 style="color: #404041;"><a class="link-decoration" href="#">Starting and Growing a Career in Web Design</a></h2>
-                        <a class="theme-btn theme-btn-two" href="#" style="color: #404041;">Read more <i class="ri-arrow-right-line"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- START SINGLE VLOG DESIGN AREA -->
-            <!-- START SINGLE VLOG DESIGN AREA -->
-            <div class="row blog-post-box align-items-center">
-                <div class="col-lg-6">
-                    <div class="blog-post-img">
-                        <a href="#">
-                            <img src="{% static 'images/blog/blog3.jpg' %}" alt="">
-                        </a>
-                        <div class="blog-post-category">
-                            <a href="#">Design</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="blog-post-caption">
-                        <h3 style="color: #404041;">Posted on Aug 28</h3>
-                        <h2 style="color: #404041;"><a class="link-decoration" href="#">How Can Designers Prepare for the Future?</a></h2>
-                        <a class="theme-btn theme-btn-two" href="#" style="color: #404041;">Read more <i class="ri-arrow-right-line"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- START SINGLE VLOG DESIGN AREA -->
-        </div>
-    </section>
+    <!-- <section class="blog-area" style="background-color: #f8f9fa;">
+        
+    </section> -->
     <!-- / END VLOG DESIGN AREA -->
     <!-- START CONTACT DESIGN AREA -->
     <section id="contact" class="contact-area">
@@ -355,85 +286,88 @@
                     </div>
                 </div>
             </div>
+    
+            <!-- Kullanıcıya mesajları göster -->
+            {% if messages %}
+            <div class="row">
+                <div class="col-lg-12">
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+    
             <div class="row">
                 <div class="col-lg-4">
-                    <div class="contact-content-part  wow fadeInUp delay-0-2s">
-                        <!-- START CONTACT SINGLEDESIGN AREA -->
+                    <div class="contact-content-part wow fadeInUp delay-0-2s">
                         <div class="single-contact wow fadeInUp" data-wow-delay=".2s">
                             <span class="circle-btn">
                                 <i class="ri-map-pin-line"></i>
                             </span>
-                            <h2>our office:</h2>
-                            <p>Jurain,Dhaka Bangladesh</p>
+                            <h2>Our office:</h2>
+                            <p>{{ contact_info.office_address }}</p>
                         </div>
-                        <!-- / END CONTACT SINGLEDESIGN AREA -->
-                        <!-- START CONTACT SINGLEDESIGN AREA -->
                         <div class="single-contact wow fadeInUp" data-wow-delay=".4s">
                             <span class="circle-btn">
                                 <i class="ri-headphone-line"></i>
                             </span>
-                            <h2>contact number:</h2>
-                            <p>+1234321321</p>
+                            <h2>Contact number:</h2>
+                            <p>{{ contact_info.phone_number }}</p>
                         </div>
-                        <!-- / END CONTACT SINGLEDESIGN AREA -->
-                        <!-- START CONTACT SINGLEDESIGN AREA -->
                         <div class="single-contact wow fadeInUp" data-wow-delay=".6s">
                             <span class="circle-btn">
                                 <i class="ri-mail-line"></i>
                             </span>
                             <h2>Email us:</h2>
-                            <p>websitename@mail.com</p>
+                            <p>{{ contact_info.email }}</p>
                         </div>
-                        <!-- / END CONTACT SINGLEDESIGN AREA -->
-                        <!-- START CONTACT SINGLEDESIGN AREA -->
                         <div class="single-contact wow fadeInUp" data-wow-delay=".6s">
                             <h2>Socials</h2>
                             <div class="about-social">
-                            <ul>
-                                <li><a href=""><i class="ri-facebook-circle-fill"></i></a></li>
-                                <li><a href=""><i class="ri-twitter-x-line"></i></a></li>
-                                <li><a href=""><i class="ri-linkedin-fill"></i></a></li>
-                                <li><a href=""><i class="ri-github-line"></i></a></li>
-                            </ul>
+                                <ul>
+                                    {% for social in social_links %}
+                                        <li><a href="{{ social.url }}" target="_blank"><i class="{{ social.icon_class }}"></i></a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
                         </div>
-                        </div>
-                        <!-- / END CONTACT SINGLEDESIGN AREA -->
                     </div>
                 </div>
-                <!-- START CONTACT FORM DESIGN AREA -->
+    
                 <div class="col-lg-8">
                     <div class="contact-form contact-form-area wow fadeInUp delay-0-4s">
-                        <form id="contactForm" class="contact-form" action="#" method="post">
+                        <form id="contactForm" class="contact-form" action="" method="post">
+                            {% csrf_token %}
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="name">Full Name</label>
-                                        <input type="text" id="name" class="form-control" value="" placeholder="Steve Milner" required="" data-error="Please enter your Name" />
+                                        <input type="text" name="full_name" id="name" class="form-control" placeholder="Steve Milner" required />
                                         <label for="name" class="for-icon"><i class="far fa-user"></i></label>
-                                        <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="email">Email Address</label>
-                                        <input type="email" id="email" class="form-control" value="" placeholder="hello@websitename.com" required="" data-error="Please enter your Email" />
+                                        <input type="email" name="email" id="email" class="form-control" placeholder="hello@websitename.com" required />
                                         <label for="email" class="for-icon"><i class="far fa-envelope"></i></label>
-                                        <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="name">Subject</label>
-                                        <input type="text" id="subject" class="form-control" value="" placeholder="Your Subject" required="" data-error="Please enter your Name" />
-                                        <label for="name" class="for-icon"><i class="far fa-user"></i></label>
-                                        <div class="help-block with-errors"></div>
+                                        <label for="subject">Subject</label>
+                                        <input type="text" name="subject" id="subject" class="form-control" placeholder="Your Subject" required />
+                                        <label for="subject" class="for-icon"><i class="far fa-user"></i></label>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="message">Your Message</label>
-                                        <textarea name="message" id="message" class="form-control" rows="4" placeholder="Write Your message" required="" data-error="Please Write your Message"></textarea>
-                                        <div class="help-block with-errors"></div>
+                                        <textarea name="message" id="message" class="form-control" rows="4" placeholder="Write Your message" required></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -441,21 +375,16 @@
                                         <button type="submit" class="theme-btn">
                                             Send Me Message <i class="ri-mail-line"></i>
                                         </button>
-                                        <div id="msgSubmit" class="hidden"></div>
                                     </div>
-                                </div>
-                                <div class="col-md-12 text-center">
-                                    <p class="input-success">We have received your mail, We will get back to you soon!</p>
-                                    <p class="input-error">Sorry, Message could not send! Please try again.</p>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
-                <!-- / END CONTACT FORM DESIGN AREA -->
             </div>
         </div>
     </section>
+    
     <!-- / END CONTACT DESIGN AREA -->
     <!-- START FOOTER DESIGN AREA -->
     <footer class="main-footer">

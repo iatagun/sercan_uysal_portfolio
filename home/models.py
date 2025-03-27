@@ -2,16 +2,44 @@ from django.db import models
 
 # Create your models here.
 
-class Contact(models.Model):
-    name = models.CharField(max_length=30)
+class ContactInfo(models.Model):
+    office_address = models.CharField(max_length=250)
+    phone_number = models.CharField(max_length=30)
     email = models.EmailField()
-    subject = models.CharField(max_length=20)
-    message = models.TextField(max_length=40)
-    
-
 
     def __str__(self):
-        return self.name
+        return f"İletişim Bilgileri"
+
+    class Meta:
+        verbose_name = "İletişim Bilgisi"
+        verbose_name_plural = "İletişim Bilgileri"
+
+class SocialLink(models.Model):
+    platform_name = models.CharField(max_length=50)
+    url = models.URLField(max_length=250)
+    icon_class = models.CharField(max_length=50, help_text='İkon sınıfı örn: ri-facebook-circle-fill')
+
+    def __str__(self):
+        return self.platform_name
+
+    class Meta:
+        verbose_name = "Sosyal Medya Linki"
+        verbose_name_plural = "Sosyal Medya Linkleri"
+
+class ContactMessage(models.Model):
+    full_name = models.CharField(max_length=100)
+    email = models.EmailField()
+    subject = models.CharField(max_length=150)
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.full_name} - {self.subject}"
+
+    class Meta:
+        verbose_name = "İletişim Formu Mesajı"
+        verbose_name_plural = "İletişim Formu Mesajları"
+        ordering = ['-created_at']
     
 class About(models.Model):
     title = models.CharField(max_length=100, default='Hakkımda')

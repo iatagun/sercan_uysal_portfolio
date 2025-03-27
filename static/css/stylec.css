@@ -2872,3 +2872,16 @@ E. Template Specific Elements
         left: 2.5rem;
     }
 }
+
+.portfolio-box {
+    width: 100%;
+    height: 250px; /* istediğin yükseklik değerini ver */
+    overflow: hidden;
+    position: relative;
+}
+
+.portfolio-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Resmin oranını bozmadan sığdırır */
+}
