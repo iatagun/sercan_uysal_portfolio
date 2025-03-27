@@ -226,12 +226,53 @@
                     {{ skill.name }} - {{ skill.proficiency_percentage }}%
                 </h5>
             <div class="ms-progress-bar" style="width: {{ skill.proficiency_percentage|default:0 }}%;"></div>
-        </div>
+            </div>
     {% endfor %}
-</div>
+        </div>
             </div>
         </div>
     </section>
+
+    <section class="blog-area py-5" style="background-color: #404041;">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h3 class="text-white">Blog Yazılarım</h3>
+            </div>
+            <div class="row g-4">
+                {% for post in blog_posts %}
+                    <div class="col-12">
+                        <div class="d-flex flex-column flex-md-row bg-white border rounded shadow-sm overflow-hidden h-100">
+                            {% if post.image %}
+                                <div class="flex-shrink-0" style="width: 250px; height: 100%; overflow: hidden;">
+                                    <img src="{{ post.image.url }}" alt="{{ post.title }}" class="w-100 h-100" style="object-fit: cover;">
+                                </div>
+                            {% endif %}
+                            <div class="p-4 d-flex flex-column justify-content-between" style="flex: 1;">
+                                <div>
+                                    <h4 class="mb-2" style="color: #404041;">{{ post.title }}</h4>
+                                    <p class="text-muted small mb-3" style="color: #404041;">{{ post.created_at|date:"d M Y" }}</p>
+                                    <div class="blog-content mb-3" style="color: #404041;">
+                                        {{ post.content|safe }}
+                                    </div>
+                                </div>
+                                <a href="{% url 'blog' %}" class="btn btn-sm btn-outline-primary align-self-start mt-2">Devamını Oku</a>
+                            </div>
+                        </div>
+                    </div>
+                {% empty %}
+                    <div class="col-12 text-center text-light">
+                        Henüz blog yazısı eklenmemiş.
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    
+    
+    
       
     <footer class="main-footer">
         <div class="container">

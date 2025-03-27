@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils.text import slugify
+from django.urls import reverse
 
 # Create your models here.
 
@@ -126,3 +128,26 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+    
+class BlogPost(models.Model):
+    title = models.CharField(max_length=200, verbose_name="Başlık")
+    image = models.ImageField(upload_to='blog/', blank=True, null=True, verbose_name="Kapak Resmi")
+    summary = models.TextField(max_length=400, verbose_name="Özet")
+    content = models.TextField(verbose_name="İçerik")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Oluşturulma Tarihi")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Güncellenme Tarihi")
+    is_published = models.BooleanField(default=True, verbose_name="Yayınlansın mı?")
+
+    class Meta:
+        verbose_name = "Blog Yazısı"
+        verbose_name_plural = "Blog Yazıları"
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return self.title
+                
+    def save(self, *args, **kwargs):
+        return super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse("blog_detail", kwargs={"slug": self.slug})

@@ -104,7 +104,10 @@
                         <div class="col-xl-2 col-lg-2 col-md-6 col-6 col-sm-3">
                             <div class="logo-area">
                                 <div class="logo">
-                                    <a href="{% url 'home' %}">Sercan Uysal</a>
+                                    <a href="{% url 'home' %}" class="d-inline-flex align-items-center text-decoration-none" style="color: #c89d66; font-size: 1.1rem; font-weight: 600;">
+                                        <i class="fa-solid fa-bookmark me-2" style="color: #c89d66; font-size: 1.9rem;"></i>
+                                        Sercan Uysal
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -209,7 +212,7 @@
     <section id="my-skills">
         <div class="ms-container">
             <div class="ms-title">
-                <h2 style="color: #404041;">{{ skill_section.title }}</h2>
+                <h2>{{ skill_section.title }}</h2>
             </div>
             <div class="ms-row">
                 <div class="ms-col">
@@ -218,21 +221,25 @@
                     {% if skill_section.additional_description %}
                         <p style="color: #404041;">{{ skill_section.additional_description }}</p>
                     {% endif %}
-                    <a href="{{ skill_section.button_link }}" class="ms-btn" >{{ skill_section.button_text }}</a>
+                    <a href="{{ skill_section.button_link }}" class="ms-btn" style="background-color: #c89d66; color: white; border: none;">{{ skill_section.button_text }}</a>
                 </div>
                 <div class="ms-col">
-    {% for skill in skill_section.skills.all %}
-        <div class="ms-progress" data-progress-width="{{ skill.proficiency_percentage }}%">
-            <h5 class="ms-progress-title">
-                {{ skill.name }} - {{ skill.proficiency_percentage }}%
-            </h5>
-            <div class="ms-progress-bar" style="width: {{ skill.proficiency_percentage|default:0 }}%;"></div>
-        </div>
-    {% endfor %}
-</div>
+                    {% for skill in skill_section.skills.all %}
+                        <div class="ms-progress" data-progress-width="{{ skill.proficiency_percentage }}%">
+                            <h5 class="ms-progress-title">
+                                {{ skill.name }} - {{ skill.proficiency_percentage }}%
+                            </h5>
+                            <div style="background-color: #e6e6e6; height: 6px; border-radius: 3px; overflow: hidden;">
+                                <div class="ms-progress-bar" style="width: {{ skill.proficiency_percentage|default:0 }}%; height: 100%; background-color: #c89d66; border-radius: 3px;"></div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </section>
+    
+    
       
     <!-- / END SERVICE DESIGN AREA -->
     <div class="projects-area" id="portfolio" style="background-color: #404041;">
@@ -261,7 +268,10 @@
             </div>
             <div class="row mt-4">
                 <div class="col-lg-12 text-center">
-                    <a href="{% url 'projects' %}" class="btn btn-primary">Daha Fazla</a>
+                    <a href="{% url 'projects' %}" class="btn" style="background-color: #c89d66; color: white; border: none; border-radius: 5px;">
+                        Daha Fazla
+                    </a>
+                    
                 </div>
             </div>
         </div>
@@ -277,7 +287,49 @@
     </section> -->
     <!-- / END VLOG DESIGN AREA -->
     <!-- START CONTACT DESIGN AREA -->
-    <section id="contact" class="contact-area">
+    <section id="contact" class="contact-area" style="background-color: #f8f9fa; color: white;">
+        <style>
+            #contact h2,
+            #contact label {
+                color: #c89d66;
+            }
+            .circle-btn i,
+            .about-social i {
+                color: #c89d66;
+            }
+            .about-social a:hover i {
+                color: white;
+                background-color: #c89d66;
+                border-radius: 50%;
+                padding: 4px;
+            }
+            .contact-form input,
+            .contact-form textarea {
+                background-color: transparent;
+                border: 1px solid #c89d66;
+                color: white;
+            }
+            .contact-form input::placeholder,
+            .contact-form textarea::placeholder {
+                color: #aaa;
+            }
+            .contact-form .for-icon i {
+                color: #c89d66;
+            }
+            .theme-btn {
+                background-color: #c89d66;
+                color: #404041;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 30px;
+                transition: all 0.3s ease;
+            }
+            .theme-btn:hover {
+                background-color: #a78044;
+                color: white;
+            }
+        </style>
+    
         <div class="container">
             <div class="row">
                 <div class="col-xl-12 col-lg-12">
@@ -287,7 +339,6 @@
                 </div>
             </div>
     
-            <!-- Kullanıcıya mesajları göster -->
             {% if messages %}
             <div class="row">
                 <div class="col-lg-12">
@@ -384,6 +435,7 @@
             </div>
         </div>
     </section>
+    
     
     <!-- / END CONTACT DESIGN AREA -->
     <!-- START FOOTER DESIGN AREA -->

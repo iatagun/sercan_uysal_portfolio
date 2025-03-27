@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
+from django.urls import reverse
 from .models import About
 from django.shortcuts import render, get_object_or_404
 from .models import SkillSection, Skill, ProjectCategory, Project
@@ -6,6 +7,7 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
 from .models import ContactInfo, SocialLink, ContactMessage
+from .models import BlogPost
 # Create your views here.
 
 
@@ -74,6 +76,7 @@ def about(request):
     categories_img = Project.image
     contact_info = ContactInfo.objects.first()
     social_links = SocialLink.objects.all()
+    blog_posts = BlogPost.objects.filter(is_published=True).order_by('-created_at')[:1]
 
     context = {
         'about_info': about_info,
@@ -86,7 +89,8 @@ def about(request):
         'categories_img': categories_img,
         'contact_info': contact_info,
         'social_links': social_links,
-        'projects': last_three_projects
+        'projects': last_three_projects,
+        'blog_posts': blog_posts,
     }
 
     return render(request, 'about.html', context)
@@ -100,7 +104,8 @@ def projects(request):
 def blog(request):
     return render(request, 'blog.html')
 
-
+def get_absolute_url(self):
+    return reverse("blog_detail", kwargs={"slug": self.slug})
 
 def contact(request):
     return render(request, 'index.html')

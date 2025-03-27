@@ -2,7 +2,7 @@ from django.contrib import admin
 #from home.models import Home
 from home.models import About
 from .models import SkillSection, Skill
-
+from .models import BlogPost
 from .models import ProjectCategory, Project
 
 from .models import ContactInfo, SocialLink, ContactMessage
@@ -49,3 +49,9 @@ class SocialLinkAdmin(admin.ModelAdmin):
 class ContactMessageAdmin(admin.ModelAdmin):
     list_display = ['full_name', 'email', 'subject', 'created_at']
     search_fields = ['full_name', 'email', 'subject']
+
+@admin.register(BlogPost)
+class BlogPostAdmin(admin.ModelAdmin):
+    list_display = ('title', 'is_published', 'created_at')
+    list_filter = ('is_published', 'created_at')
+    search_fields = ('title', 'summary', 'content')
