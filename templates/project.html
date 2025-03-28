@@ -1,170 +1,259 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
-
+<!--#404041 navbar background colour-->
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Portfolio Details - iPortfolio Bootstrap Template</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="static/vendor/aos/aos.css" rel="stylesheet">
-  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="static/css/style.css" rel="stylesheet">
-
-  
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Nino - Modern Portfolio Template">
+    <meta name="keywords" content="personal, portfolio new, html, one page, bootstrap, new html template, design, creative, onepage, clean, modern">
+    <meta name="author" content="Tanvir Hossain">
+    <!-- PAGE TITLE -->
+    <title>Sercan  Uysal</title>
+    
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/images/favicon.png' %}">
+    <!-- ALL GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- BOOTSTRAP CSS -->
+    
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <!-- FONT AWESOME CSS -->
+    
+    <link rel="stylesheet" href="{% static 'css/font-awesome-pro.css' %}" />
+    <!-- FONT AWESOME CSS -->
+    
+    <link rel="stylesheet" href="{% static 'css/fonts/remixicon.css' %}" />
+    <!-- MAGNIFIC CSS -->
+    
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popupc.css' %}">
+    <!-- NICE SELECT CSS -->
+    
+    <link rel="stylesheet" href="{% static 'css/nice-select.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/odometer-theme-defaultc.css' %}" />
+    <!-- ANIMATE CSS -->
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carouselc.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/animatec.css' %}" />
+    <!-- MOBILE MENU CSS -->
+    
+    <link rel="stylesheet" href="{% static 'css/mobilemenu.css' %}" />
+    <!-- SLICK CSS -->
+    <link rel="stylesheet" href="{% static 'css/slick.min.css' %}" />
+    <!-- SPACING CSS -->
+    
+    <link rel="stylesheet" href="{% static 'css/spacing.css' %}" />
+    <!-- MAIN STYLE CSS -->
+    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/stylec.css' %}" />
+    <!-- RESPONSIVE CSS -->
+    
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 
 <body>
-
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
-
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
-
-      <div class="profile">
-        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Alex Smith</a></h1>
-        <div class="social-links mt-3 text-center">
-          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+    <!-- START PRELOADER AREA-->
+    <div class="preloader" style="background-color: #404041;">
+        <svg viewbox="0 0 1000 1000" preserveaspectratio="none" style="background-color: #404041;">
+            <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z" style="background-color: #404041;"></path>
+        </svg>
+        <div class="preloader-heading" style="background-color: #404041;">
+            <div class="load-text">
+                <span>L</span>
+                <span>o</span>
+                <span>a</span>
+                <span>d</span>
+                <span>i</span>
+                <span>n</span>
+                <span>g</span>
+            </div>
         </div>
-      </div>
-
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-          <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
     </div>
-  </header><!-- End Header -->
-
-  <main id="main">
-
-    <!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
-      <div class="container">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Portfoio Details</h2>
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Portfoio Details</li>
-          </ol>
+    <!-- END PRELOADER AREA -->
+    <!-- START SCROOL UP DESIGN AREA -->
+    <div class="progress-wrap cursor-pointer">
+        <i class="ri-arrow-up-s-line"></i>
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+    <!-- / END SCROOL UP DESIGN AREA -->
+    <!-- START MAGIC CURSOR AND BALL AREA-->
+    <div id="magic-cursor">
+        <div id="ball"></div>
+    </div>
+    <!-- / END MAGIC CURSOR AND BALL AREA-->
+    <!-- START MENU DESIGN AREA-->
+    <header class="main-header">
+        <div class="header-upper" style="background-color: #404041;">
+            <div class="container">
+                <div class="header-inner">
+                    <div class="row align-items-center">
+                        <div class="col-xl-2 col-lg-2 col-md-6 col-6 col-sm-3">
+                            <div class="logo-area">
+                                <div class="logo">
+                                    <a href="{% url 'home' %}" class="d-inline-flex align-items-center text-decoration-none" style="color: #c89d66; font-size: 1.1rem; font-weight: 600;">
+                                        <i class="fa-solid fa-bookmark me-2" style="color: #c89d66; font-size: 1.9rem;"></i>
+                                        Sercan Uysal
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-10 col-lg-10 col-md-6 col-6 col-sm-9">
+                            <div class="main-menu">
+                                <nav id="mobile-menu">
+                                  <ul>
+                                    <li><a href="{% url 'home' %}" class="linkstyle" style="color:white;">Anasayfa</a></li>
+                                    <li><a href="{% url 'about' %}" class="linkstyle"style="color:white;">Hakkımda</a></li>
+                                    <li class="has-dropdown"><a href="{% url 'project' %}" style="color:white;" class="linkstyle">Portfolyo</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="{% url '2d' %}" style="color:white;">2D</a></li>
+                                            <li><a href="{% url '3d' %}" style="color:white;">3D</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="{% url 'contact' %}" class="linkstyle" style="color:white;">Contact</a></li>
+                                </ul>
+                                </nav>
+                            </div>
+                            <div class="side-menu-icon d-lg-none text-end">
+                                <a href="javascript:void(0)" class="info-toggle-btn f-right sidebar-toggle-btn"><i class="fal fa-bars"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-      </div>
-    </section><!-- End Breadcrumbs -->
-
-    <!-- ======= Portfolio Details Section ======= -->
-    <section id="portfolio-details" class="portfolio-details">
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide">
-                  <img src="static/img/portfolio/portfolio-details-1.jpg" alt="">
+    </header>
+    <!-- // END MENU DESIGN AREA-->
+    <!-- START MOBILE MENU DESIGN AREA-->
+    <div class="sidebar__area">
+        <div class="sidebar__wrapper">
+            <div class="sidebar__close">
+                <button class="sidebar__close-btn" id="sidebar__close-btn">
+                    <i class="fal fa-times"></i>
+                </button>
+            </div>
+            <div class="sidebar__content mt-50 mb-20">
+                <div class="mobile-menu fix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="body-overlay"></div>
+    <!-- // END MOBILE MENU DESIGN AREA-->
+    <!-- START HEADER DESIGN AREA -->
+    <section id="home" class="main-hero-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- START HERO DESIGN AREA -->
+                    <div class="hero-content wow fadeInUp text-center delay-0-2s">
+                        <h2 style="color: #404041;">Sercan Uysal</h2>
+                    </div>
+                    <!-- / END HERO DESIGN AREA -->
                 </div>
-
-                <div class="swiper-slide">
-                  <img src="static/img/portfolio/portfolio-details-2.jpg" alt="">
+            </div>
+            <div class="row">
+                <div class="col-lg-3 pt-30">
+                    <!-- START HERO DESIGN AREA -->
+                    <div class="hero-content wow fadeInUp delay-0-2s">
+                        
+                    </div>
+                    <!-- / END HERO DESIGN AREA -->
                 </div>
-
-                <div class="swiper-slide">
-                  <img src="static/img/portfolio/portfolio-details-3.jpg" alt="">
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="{% static 'images/about/me.png' %}" style="width: 260px; min-width: 310px;"  alt="" >
+                    </div>
+                    <!-- / END HERO DESIGN AREA -->
                 </div>
-
+                <div class="col-lg-3 pt-30">
+                    
+                    <!-- / END HERO DESIGN AREA -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- / END HEADER DESIGN AREA -->
+    
+    
+      
+    <div class="projects-area" id="portfolio" style="background-color: #404041;">
+      <div class="container-fluid">
+          <div class="row g-4 portfolio-grid">
+              {% for project in projects %}
+              <div class="col-md-6 col-xl-4 portfolio-item">
+                  {% if project.link %}
+                      <a href="{{ project.link }}" {% if project.is_video %}class="popup-youtube"{% else %}class="work-popup"{% endif %}>
+                  {% else %}
+                      <a href="{{ project.image.url }}" class="work-popup">
+                  {% endif %}
+                      <div class="portfolio-box" style="width:100%; height:250px; overflow:hidden; position:relative;">
+                          <img src="{{ project.image.url }}" alt="{{ project.title }}" style="width:100%; height:100%; object-fit:cover; object-position:center;">
+                          <span class="portfolio-category">{{ project.category.name }}</span>
+                          <div class="portfolio-caption">
+                              <h1>{{ project.title }}</h1>
+                              <p>{{ project.description }}</p>
+                          </div>
+                      </div>
+                  </a>
               </div>
-              <div class="swiper-pagination"></div>
-            </div>
+              {% endfor %}
           </div>
+      </div>
+  </div>
+  
 
-          <div class="col-lg-4">
-            <div class="portfolio-info">
-              <h3>Project information</h3>
-              <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-              </ul>
+    
+    
+    
+    <!-- / END CONTACT DESIGN AREA -->
+    <!-- START FOOTER DESIGN AREA -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                
             </div>
-            <div class="portfolio-description">
-              <h2>This is an example of portfolio detail</h2>
-              <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-              </p>
-            </div>
-          </div>
-
         </div>
-
-      </div>
-    </section><!-- End Portfolio Details Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>iPortfolio</span></strong>
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-  </footer><!-- End  Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="static/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="static/vendor/aos/aos.js"></script>
-  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="static/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="static/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="static/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="static/js/main.js"></script>
-
+    </footer>
+    <!-- / END FOOTER DESIGN AREA -->
+    <!-- JQUERY JS -->
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <!-- BOOTSTRAP JS-->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- APPEAR JS -->
+    <script src="{% static 'js/appear.min.js' %}"></script>
+    <!-- MAGNIFICANT JS -->
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <!-- MOBILE MENU JS-->
+    <script src="{% static 'js/mobilemenu.js' %}"></script>
+    <!-- GSAP AND LOCOMOTIV JS-->
+    <script src="{% static 'js/gsap.min.js' %}"></script>
+    <script src="{% static 'js/ScrollTrigger.min.js' %}"></script>
+    <script src="{% static 'js/lenis.js' %}"></script>
+    <!-- SLICK JS-->
+    <script src="{% static 'js/slick.min.js' %}"></script>
+    <!-- NICE SELECT JS-->
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <!-- IMAGE LOADER JS-->
+    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+    <!-- ISOTOPE JS-->
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <!--  WOW ANIMATION JS-->
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <!-- SCRIPT JS-->
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 
 </html>

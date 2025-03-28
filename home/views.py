@@ -62,7 +62,34 @@ def home(request):
 
 
 def project(request):
-    return render(request, 'project.html')
+    about_info = About.objects.latest('updated_at')
+    title = about_info.title
+    name = about_info.name
+    detailed_description = about_info.detailed_description
+    image = about_info.image
+    skill_section = get_object_or_404(SkillSection)
+    categories = ProjectCategory.objects.prefetch_related('projects').all()
+    last_three_projects = Project.objects.order_by('-id')
+    categories_img = Project.image
+    contact_info = ContactInfo.objects.first()
+    social_links = SocialLink.objects.all()
+    blog_posts = BlogPost.objects.filter(is_published=True).order_by('-created_at')[:1]
+
+    context = {
+        'about_info': about_info,
+        'title': title,
+        'name': name,
+        'detailed_description': detailed_description,
+        'image': image,
+        'skill_section': skill_section,
+        'categories': categories,
+        'categories_img': categories_img,
+        'contact_info': contact_info,
+        'social_links': social_links,
+        'projects': last_three_projects,
+        'blog_posts': blog_posts,
+    }
+    return render(request, 'project.html', context)
 
 def about(request):
     about_info = About.objects.latest('updated_at')
@@ -100,6 +127,24 @@ def service(request):
 
 def projects(request):
     return render(request, 'projects.html')
+
+def twod(request):
+    twod = Project.objects.filter(category__name__iexact='2d').order_by('-id')
+
+    context = {
+        'twod': twod,
+    }
+
+    return render(request, '2d.html', context)
+
+def threed(request):
+    threed = Project.objects.filter(category__name__iexact='3d').order_by('-id')
+
+    context = {
+        'threed': threed,
+    }
+
+    return render(request, '3d.html', context)
 
 def blog(request):
     return render(request, 'blog.html')

@@ -187,57 +187,39 @@
     </section>
     <!-- / END HEADER DESIGN AREA -->
     
-    <!-- START ABOUT DESIGN AREA -->
-    <section id="about" class="about-area" style="background-color: #404041;">
-        <div class="container">
-            <div class="row">
-                <!-- START ABOUT TEXT DESIGN AREA -->
-                <div class="col-lg-3 col-sm-3">
-                    <img src="{% static 'images/hak.gif' %}" alt="{{ about_info.name }}" style="width:300px;height:250px;">
-
-                </div>
-                <div class="col-lg-9 col-sm-9">
-                    <div class="about-content-part wow fadeInUp delay-0-2s">
-                        <p>{{title}}</p>
-                        <p style="font-size: medium;"> {{detailed_description}}</p>
-                    </div>
-                    
-                </div>
-                <!-- / END ABOUT TEXT DESIGN AREA -->
-            </div>
-        </div>
-    </section>
-    <!-- / END ABOUT DESIGN AREA -->
-    <!-- START SERVICE DESIGN AREA -->
-    <section id="my-skills">
-        <div class="ms-container">
-            <div class="ms-title">
-                <h2>{{ skill_section.title }}</h2>
-            </div>
-            <div class="ms-row">
-                <div class="ms-col">
-                    <h4 style="color: #404041;">{{ skill_section.subtitle }}</h4>
-                    <p style="color: #404041;">{{ skill_section.description }}</p>
-                    {% if skill_section.additional_description %}
-                        <p style="color: #404041;">{{ skill_section.additional_description }}</p>
-                    {% endif %}                </div>
-                <div class="ms-col">
-                    {% for skill in skill_section.skills.all %}
-                        <div class="ms-progress" data-progress-width="{{ skill.proficiency_percentage }}%">
-                            <h5 class="ms-progress-title">
-                                {{ skill.name }} - {{ skill.proficiency_percentage }}%
-                            </h5>
-                            <div style="background-color: #e6e6e6; height: 6px; border-radius: 3px; overflow: hidden;">
-                                <div class="ms-progress-bar" style="width: {{ skill.proficiency_percentage|default:0 }}%; height: 100%; background-color: #c89d66; border-radius: 3px;"></div>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </section>
     
+      
+    <div class="projects-area" id="portfolio" style="background-color: #404041;">
+      <div class="container-fluid">
+          <div class="row g-4 portfolio-grid">
+              {% for project in threed %}
+              <div class="col-md-6 col-xl-4 portfolio-item">
+                  {% if project.link %}
+                      <a href="{{ project.link }}" {% if project.is_video %}class="popup-youtube"{% else %}class="work-popup"{% endif %}>
+                  {% else %}
+                      <a href="{{ project.image.url }}" class="work-popup">
+                  {% endif %}
+                      <div class="portfolio-box" style="width:100%; height:250px; overflow:hidden; position:relative;">
+                          <img src="{{ project.image.url }}" alt="{{ project.title }}" style="width:100%; height:100%; object-fit:cover; object-position:center;">
+                          <span class="portfolio-category">{{ project.category.name }}</span>
+                          <div class="portfolio-caption">
+                              <h1>{{ project.title }}</h1>
+                              <p>{{ project.description }}</p>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+              {% endfor %}
+          </div>
+      </div>
+  </div>
+  
 
+    
+    
+    
+    <!-- / END CONTACT DESIGN AREA -->
+    <!-- START FOOTER DESIGN AREA -->
     <footer class="main-footer">
         <div class="container">
             <div class="row">
