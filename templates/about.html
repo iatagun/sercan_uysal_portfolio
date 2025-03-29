@@ -212,16 +212,24 @@
     <section id="my-skills">
         <div class="ms-container">
             <div class="ms-title">
-                <h2>{{ skill_section.title }}</h2>
+                <h2></h2>
             </div>
             <div class="ms-row">
                 <div class="ms-col">
-                    <h4 style="color: #404041;">{{ skill_section.subtitle }}</h4>
-                    <p style="color: #404041;">{{ skill_section.description }}</p>
-                    {% if skill_section.additional_description %}
-                        <p style="color: #404041;">{{ skill_section.additional_description }}</p>
-                    {% endif %}                </div>
+                    <h2 style="color: #404041;">Becerilerim</h2>
+                    {% for beceri in beceri.skills.all %}
+                        <div class="ms-progress" data-progress-width="{{ beceri.proficiency_percentage }}%">
+                            <h5 class="ms-progress-title">
+                                {{ beceri.name }} - {{ beceri.proficiency_percentage }}%
+                            </h5>
+                            <div style="background-color: #e6e6e6; height: 6px; border-radius: 3px; overflow: hidden;">
+                                <div class="ms-progress-bar" style="width: {{ beceri.proficiency_percentage|default:0 }}%; height: 100%; background-color: #c89d66; border-radius: 3px;"></div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
                 <div class="ms-col">
+                    <h2 style="color: #404041;">Kullandığım Programlar</h2>
                     {% for skill in skill_section.skills.all %}
                         <div class="ms-progress" data-progress-width="{{ skill.proficiency_percentage }}%">
                             <h5 class="ms-progress-title">

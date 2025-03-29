@@ -17,7 +17,7 @@ def home(request):
     name = about_info.name
     detailed_description = about_info.detailed_description
     image = about_info.image
-    skill_section = get_object_or_404(SkillSection)
+    skill_section = SkillSection.objects.first()
     categories = ProjectCategory.objects.prefetch_related('projects').all()
     last_three_projects = Project.objects.order_by('-id')[:3]
     categories_img = Project.image
@@ -62,7 +62,7 @@ def project(request):
     name = about_info.name
     detailed_description = about_info.detailed_description
     image = about_info.image
-    skill_section = get_object_or_404(SkillSection)
+    skill_section = SkillSection.objects.first()
     categories = ProjectCategory.objects.prefetch_related('projects').all()
     last_three_projects = Project.objects.order_by('-id')
     categories_img = Project.image
@@ -92,13 +92,15 @@ def about(request):
     name = about_info.name
     detailed_description = about_info.detailed_description
     image = about_info.image
-    skill_section = get_object_or_404(SkillSection)
+    skill_section = SkillSection.objects.first()
     categories = ProjectCategory.objects.prefetch_related('projects').all()
     last_three_projects = Project.objects.order_by('-id')[:3]
     categories_img = Project.image
     contact_info = ContactInfo.objects.first()
     social_links = SocialLink.objects.all()
     blog_posts = BlogPost.objects.filter(is_published=True).order_by('-created_at')[:1]
+    print(SkillSection.objects.all()[1])
+    beceri = SkillSection.objects.all()[1]
 
     context = {
         'about_info': about_info,
@@ -113,6 +115,7 @@ def about(request):
         'social_links': social_links,
         'projects': last_three_projects,
         'blog_posts': blog_posts,
+        'beceri' : beceri
     }
 
     return render(request, 'about.html', context)
@@ -153,7 +156,7 @@ def contact(request):
     name = about_info.name
     detailed_description = about_info.detailed_description
     image = about_info.image
-    skill_section = get_object_or_404(SkillSection)
+    skill_section = SkillSection.objects.first()
     categories = ProjectCategory.objects.prefetch_related('projects').all()
     last_three_projects = Project.objects.order_by('-id')[:3]
     categories_img = Project.image

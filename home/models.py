@@ -69,6 +69,9 @@ class SkillSection(models.Model):
     additional_description = models.TextField(blank=True, null=True)
     button_text = models.CharField(max_length=50, default='Contact Me')
     button_link = models.CharField(max_length=100, default='#contact')
+    
+    # Yeni eklenen flag alanı:
+    is_active = models.BooleanField(default=True, help_text='Skill bölümünün aktif olup olmadığını belirler.')
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -79,6 +82,7 @@ class SkillSection(models.Model):
 
     def __str__(self):
         return self.title
+
 
 class Skill(models.Model):
     section = models.ForeignKey(SkillSection, related_name='skills', on_delete=models.CASCADE)
@@ -104,6 +108,8 @@ class Skill(models.Model):
 
 class ProjectCategory(models.Model):
     name = models.CharField(max_length=100)
+    is_active = models.BooleanField(default=True, help_text='Skill bölümünün aktif olup olmadığını belirler.')
+
 
     class Meta:
         verbose_name = "Proje Kategorisi"
