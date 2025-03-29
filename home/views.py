@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.urls import reverse
-from .models import About
+from .models import About, Contact
 from django.shortcuts import render, get_object_or_404
 from .models import SkillSection, Skill, ProjectCategory, Project
 from django.contrib import messages
@@ -25,25 +25,20 @@ def home(request):
     social_links = SocialLink.objects.all()
 
 
-    if request.method == 'POST':
-        full_name = request.POST.get('full_name')
-        email = request.POST.get('email')
-        subject = request.POST.get('subject')
-        message_text = request.POST.get('message')
+    if request.method == "POST":
+        full_name = request.POST.get("full_name")
+        email = request.POST.get("email")
+        subject = request.POST.get("subject")
+        message = request.POST.get("message")
 
-        if full_name and email and subject and message_text:
-            # Email Gönder
-            send_mail(
-                subject=f"{subject} - {full_name}",
-                message=f"Sender: {full_name}\nEmail: {email}\n\nMessage:\n{message_text}",
-                from_email=settings.EMAIL_HOST_USER,
-                recipient_list=[settings.EMAIL_HOST_USER],  # gönderdiğin mailin adresine gelir
-                fail_silently=False,
-            )
-            messages.success(request, 'We have received your email, we will get back to you soon!')
-            return redirect('contact')
-        else:
-            messages.error(request, 'Please fill in all fields and try again.')
+        # Form verilerini Contact modeline kaydet
+        Contact.objects.create(
+            full_name=full_name,
+            email=email,
+            subject=subject,
+            message=message
+        )
+        messages.success(request, "Mesajınız başarıyla gönderildi!")
 
     context = {
         'about_info': about_info,
@@ -153,5 +148,32 @@ def get_absolute_url(self):
     return reverse("blog_detail", kwargs={"slug": self.slug})
 
 def contact(request):
-    return render(request, 'index.html')
+    about_info = About.objects.latest('updated_at')
+    title = about_info.title
+    name = about_info.name
+    detailed_description = about_info.detailed_description
+    image = about_info.image
+    skill_section = get_object_or_404(SkillSection)
+    categories = ProjectCategory.objects.prefetch_related('projects').all()
+    last_three_projects = Project.objects.order_by('-id')[:3]
+    categories_img = Project.image
+    contact_info = ContactInfo.objects.first()
+    social_links = SocialLink.objects.all()
+    blog_posts = BlogPost.objects.filter(is_published=True).order_by('-created_at')[:1]
+
+    context = {
+        'about_info': about_info,
+        'title': title,
+        'name': name,
+        'detailed_description': detailed_description,
+        'image': image,
+        'skill_section': skill_section,
+        'categories': categories,
+        'categories_img': categories_img,
+        'contact_info': contact_info,
+        'social_links': social_links,
+        'projects': last_three_projects,
+        'blog_posts': blog_posts,
+    }
+    return render(request, 'contact.html', context)
 

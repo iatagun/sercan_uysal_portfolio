@@ -38,6 +38,7 @@ urlpatterns = [
     path('blog', views.blog, name='blog'),
     path('2d', views.twod, name='2d'),
     path('3d', views.threed, name='3d'),
+    
     # path('skills', views.skills, name='skills'),
     # path('contact', views.contact, name='contact'),
 ]

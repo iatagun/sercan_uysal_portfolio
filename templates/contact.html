@@ -1,6 +1,7 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
-
+<!--#404041 navbar background colour-->
 <head>
     <!-- META -->
     <meta charset="utf-8">
@@ -10,34 +11,50 @@
     <meta name="keywords" content="personal, portfolio new, html, one page, bootstrap, new html template, design, creative, onepage, clean, modern">
     <meta name="author" content="Tanvir Hossain">
     <!-- PAGE TITLE -->
-    <title>Nino - Modern Portfolio Template</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
+    <title>Sercan  Uysal</title>
+    
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/images/favicon.png' %}">
     <!-- ALL GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- BOOTSTRAP CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
     <!-- FONT AWESOME CSS -->
-    <link rel="stylesheet" href="assets/css/font-awesome-pro.css" />
+    
+    <link rel="stylesheet" href="{% static 'css/font-awesome-pro.css' %}" />
     <!-- FONT AWESOME CSS -->
-    <link rel="stylesheet" href="assets/fonts/remixicon.css" />
+    
+    <link rel="stylesheet" href="{% static 'css/fonts/remixicon.css' %}" />
     <!-- MAGNIFIC CSS -->
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popupc.css' %}">
     <!-- NICE SELECT CSS -->
-    <link rel="stylesheet" href="assets/css/nice-select.min.css" />
+    
+    <link rel="stylesheet" href="{% static 'css/nice-select.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/odometer-theme-defaultc.css' %}" />
     <!-- ANIMATE CSS -->
-    <link rel="stylesheet" href="assets/css/animate.min.css" />
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carouselc.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/animatec.css' %}" />
     <!-- MOBILE MENU CSS -->
-    <link rel="stylesheet" href="assets/css/mobilemenu.css" />
+    
+    <link rel="stylesheet" href="{% static 'css/mobilemenu.css' %}" />
     <!-- SLICK CSS -->
-    <link rel="stylesheet" href="assets/css/slick.min.css" />
+    <link rel="stylesheet" href="{% static 'css/slick.min.css' %}" />
     <!-- SPACING CSS -->
-    <link rel="stylesheet" href="assets/css/spacing.css" />
+    
+    <link rel="stylesheet" href="{% static 'css/spacing.css' %}" />
     <!-- MAIN STYLE CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/stylec.css' %}" />
     <!-- RESPONSIVE CSS -->
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -48,11 +65,11 @@
 
 <body>
     <!-- START PRELOADER AREA-->
-    <div class="preloader">
-        <svg viewbox="0 0 1000 1000" preserveaspectratio="none">
-            <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+    <div class="preloader" style="background-color: #404041;">
+        <svg viewbox="0 0 1000 1000" preserveaspectratio="none" style="background-color: #404041;">
+            <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z" style="background-color: #404041;"></path>
         </svg>
-        <div class="preloader-heading">
+        <div class="preloader-heading" style="background-color: #404041;">
             <div class="load-text">
                 <span>L</span>
                 <span>o</span>
@@ -80,14 +97,17 @@
     <!-- / END MAGIC CURSOR AND BALL AREA-->
     <!-- START MENU DESIGN AREA-->
     <header class="main-header">
-        <div class="header-upper">
+        <div class="header-upper" style="background-color: #404041;">
             <div class="container">
                 <div class="header-inner">
                     <div class="row align-items-center">
                         <div class="col-xl-2 col-lg-2 col-md-6 col-6 col-sm-3">
                             <div class="logo-area">
                                 <div class="logo">
-                                    <a href="index.html"><img src="assets/images/logo.png" alt=""></a>
+                                    <a href="{% url 'home' %}" class="d-inline-flex align-items-center text-decoration-none" style="color: #c89d66; font-size: 1.1rem; font-weight: 600;">
+                                        <i class="fa-solid fa-bookmark me-2" style="color: #c89d66; font-size: 1.9rem;"></i>
+                                        Sercan Uysal
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -95,17 +115,15 @@
                             <div class="main-menu">
                                 <nav id="mobile-menu">
                                     <ul>
-                                        <li><a href="index.html" class="linkstyle">Home</a></li>
-                                        <li><a href="about.html" class="linkstyle">about</a></li>
-                                        <li><a href="service.html" class="linkstyle">services</a></li>
-                                        <li class="has-dropdown"><a href="projects.html" class="linkstyle">projects</a>
+                                        <li><a href="{% url 'home' %}" class="linkstyle" style="color:white;">Anasayfa</a></li>
+                                        <li><a href="{% url 'about' %}" class="linkstyle"style="color:white;">Hakkımda</a></li>
+                                        <li class="has-dropdown"><a href="{% url 'project' %}" style="color:white;" class="linkstyle">Portfolyo</a>
                                             <ul class="sub-menu">
-                                                <li><a href="projects.html">Projects List</a></li>
-                                                <li><a href="single-project.html">Single Portfolio</a></li>
+                                                <li><a href="{% url '2d' %}" style="color:white;">2D</a></li>
+                                                <li><a href="{% url '3d' %}" style="color:white;">3D</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="blog.html" class="linkstyle">Blog</a></li>
-                                        <li><a href="contact.html" class="linkstyle">Contact</a></li>
+                                        <li><a href="{% url 'contact' %}" class="linkstyle" style="color:white;">İletişim</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -120,7 +138,8 @@
     </header>
     <!-- // END MENU DESIGN AREA-->
     <!-- START MOBILE MENU DESIGN AREA-->
-    <div class="sidebar__area">
+     <!-- START MOBILE MENU DESIGN AREA-->
+     <div class="sidebar__area">
         <div class="sidebar__wrapper">
             <div class="sidebar__close">
                 <button class="sidebar__close-btn" id="sidebar__close-btn">
@@ -134,20 +153,84 @@
     </div>
     <div class="body-overlay"></div>
     <!-- // END MOBILE MENU DESIGN AREA-->
-    <!-- START SINGLE PAGE DESIGN AREA -->
-    <section class="single-page-hero-area">
+    <!-- START HEADER DESIGN AREA -->
+    <section id="home" class="main-hero-area">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row">
                 <div class="col-lg-12">
-                    <h2>Say Hello</h2>
-                    <p>Fill out the form below to get in touch with me. I'm always excited to hear about new opportunities and I'll do my best to respond to your inquiry within 24 hours.</p>
+                    <!-- START HERO DESIGN AREA -->
+                    <div class="hero-content wow fadeInUp text-center delay-0-2s">
+                        <h2 style="color: #404041;">Sercan Uysal</h2>
+                    </div>
+                    <!-- / END HERO DESIGN AREA -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 pt-30">
+                    <!-- START HERO DESIGN AREA -->
+                    <div class="hero-content wow fadeInUp delay-0-2s">
+                        
+                    </div>
+                    <!-- / END HERO DESIGN AREA -->
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="{% static 'images/about/me.png' %}" style="width: 260px; min-width: 310px;"  alt="" >
+                    </div>
+                    <!-- / END HERO DESIGN AREA -->
+                </div>
+                <div class="col-lg-3 pt-30">
+                    
+                    <!-- / END HERO DESIGN AREA -->
                 </div>
             </div>
         </div>
     </section>
-    <!-- // END SINGLE PAGE DESIGN AREA -->
+    <!-- / END HEADER DESIGN AREA -->
     <!-- START CONTACT DESIGN AREA -->
-    <section id="contact" class="contact-area">
+    <section id="contact" class="contact-area" style="background-color: #f8f9fa; color: white;">
+        <style>
+            #contact h2,
+            #contact label {
+                color: #c89d66;
+            }
+            .circle-btn i,
+            .about-social i {
+                color: #c89d66;
+            }
+            .about-social a:hover i {
+                color: white;
+                background-color: #c89d66;
+                border-radius: 50%;
+                padding: 4px;
+            }
+            .contact-form input,
+            .contact-form textarea {
+                background-color: transparent;
+                border: 1px solid #c89d66;
+                color: white;
+            }
+            .contact-form input::placeholder,
+            .contact-form textarea::placeholder {
+                color: #aaa;
+            }
+            .contact-form .for-icon i {
+                color: #c89d66;
+            }
+            .theme-btn {
+                background-color: #c89d66;
+                color: #404041;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 30px;
+                transition: all 0.3s ease;
+            }
+            .theme-btn:hover {
+                background-color: #a78044;
+                color: white;
+            }
+        </style>
+    
         <div class="container">
             <div class="row">
                 <div class="col-xl-12 col-lg-12">
@@ -156,85 +239,87 @@
                     </div>
                 </div>
             </div>
+    
+            {% if messages %}
+            <div class="row">
+                <div class="col-lg-12">
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+    
             <div class="row">
                 <div class="col-lg-4">
-                    <div class="contact-content-part  wow fadeInUp delay-0-2s">
-                        <!-- START CONTACT SINGLEDESIGN AREA -->
+                    <div class="contact-content-part wow fadeInUp delay-0-2s">
                         <div class="single-contact wow fadeInUp" data-wow-delay=".2s">
                             <span class="circle-btn">
                                 <i class="ri-map-pin-line"></i>
                             </span>
-                            <h2>our office:</h2>
-                            <p>Jurain,Dhaka Bangladesh</p>
+                            <h2>Our office:</h2>
+                            <p>{{ contact_info.office_address }}</p>
                         </div>
-                        <!-- / END CONTACT SINGLEDESIGN AREA -->
-                        <!-- START CONTACT SINGLEDESIGN AREA -->
                         <div class="single-contact wow fadeInUp" data-wow-delay=".4s">
                             <span class="circle-btn">
                                 <i class="ri-headphone-line"></i>
                             </span>
-                            <h2>contact number:</h2>
-                            <p>+1234321321</p>
+                            <h2>Contact number:</h2>
+                            <p>{{ contact_info.phone_number }}</p>
                         </div>
-                        <!-- / END CONTACT SINGLEDESIGN AREA -->
-                        <!-- START CONTACT SINGLEDESIGN AREA -->
                         <div class="single-contact wow fadeInUp" data-wow-delay=".6s">
                             <span class="circle-btn">
                                 <i class="ri-mail-line"></i>
                             </span>
                             <h2>Email us:</h2>
-                            <p>websitename@mail.com</p>
+                            <p>{{ contact_info.email }}</p>
                         </div>
-                        <!-- / END CONTACT SINGLEDESIGN AREA -->
-                        <!-- START CONTACT SINGLEDESIGN AREA -->
                         <div class="single-contact wow fadeInUp" data-wow-delay=".6s">
                             <h2>Socials</h2>
                             <div class="about-social">
-                            <ul>
-                                <li><a href=""><i class="ri-facebook-circle-fill"></i></a></li>
-                                <li><a href=""><i class="ri-twitter-x-line"></i></a></li>
-                                <li><a href=""><i class="ri-linkedin-fill"></i></a></li>
-                                <li><a href=""><i class="ri-github-line"></i></a></li>
-                            </ul>
+                                <ul>
+                                    {% for social in social_links %}
+                                        <li><a href="{{ social.url }}" target="_blank"><i class="{{ social.icon_class }}"></i></a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
                         </div>
-                        </div>
-                        <!-- / END CONTACT SINGLEDESIGN AREA -->
                     </div>
                 </div>
-                <!-- START CONTACT FORM DESIGN AREA -->
+    
                 <div class="col-lg-8">
                     <div class="contact-form contact-form-area wow fadeInUp delay-0-4s">
-                        <form id="contactForm" class="contact-form" action="#" method="post">
+                        <form id="contactForm" class="contact-form" action="" method="post">
+                            {% csrf_token %}
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="name">Full Name</label>
-                                        <input type="text" id="name" class="form-control" value="" placeholder="Steve Milner" required="" data-error="Please enter your Name" />
+                                        <input type="text" name="full_name" id="name" class="form-control" placeholder="Steve Milner" required />
                                         <label for="name" class="for-icon"><i class="far fa-user"></i></label>
-                                        <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="email">Email Address</label>
-                                        <input type="email" id="email" class="form-control" value="" placeholder="hello@websitename.com" required="" data-error="Please enter your Email" />
+                                        <input type="email" name="email" id="email" class="form-control" placeholder="hello@websitename.com" required />
                                         <label for="email" class="for-icon"><i class="far fa-envelope"></i></label>
-                                        <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="name">Subject</label>
-                                        <input type="text" id="subject" class="form-control" value="" placeholder="Your Subject" required="" data-error="Please enter your Name" />
-                                        <label for="name" class="for-icon"><i class="far fa-user"></i></label>
-                                        <div class="help-block with-errors"></div>
+                                        <label for="subject">Subject</label>
+                                        <input type="text" name="subject" id="subject" class="form-control" placeholder="Your Subject" required />
+                                        <label for="subject" class="for-icon"><i class="far fa-user"></i></label>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="message">Your Message</label>
-                                        <textarea name="message" id="message" class="form-control" rows="4" placeholder="Write Your message" required="" data-error="Please Write your Message"></textarea>
-                                        <div class="help-block with-errors"></div>
+                                        <textarea name="message" id="message" class="form-control" rows="4" placeholder="Write Your message" required></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -242,70 +327,53 @@
                                         <button type="submit" class="theme-btn">
                                             Send Me Message <i class="ri-mail-line"></i>
                                         </button>
-                                        <div id="msgSubmit" class="hidden"></div>
                                     </div>
-                                </div>
-                                <div class="col-md-12 text-center">
-                                    <p class="input-success">We have received your mail, We will get back to you soon!</p>
-                                    <p class="input-error">Sorry, Message could not send! Please try again.</p>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
-                <!-- / END CONTACT FORM DESIGN AREA -->
             </div>
         </div>
     </section>
+    
+    
     <!-- / END CONTACT DESIGN AREA -->
     <!-- START FOOTER DESIGN AREA -->
     <footer class="main-footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer-top">
-                        <p> Have a project in mind?</p>
-                        <h2><a href="mailto:hello@websitename.com">let's work</a></h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 col-sm-6">
-                    <p class="copy-left-text">Template by <a href="https://themeforest.net/user/creativepersonal/portfolio">Creative Personal®</a></p>
-                </div>
-                <div class="col-lg-6 col-sm-6">
-                    <p class="copy-right-text">&copy; Copyright 2024</p>
-                </div>
+                
             </div>
         </div>
     </footer>
     <!-- / END FOOTER DESIGN AREA -->
     <!-- JQUERY JS -->
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
     <!-- BOOTSTRAP JS-->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <!-- APPEAR JS -->
-    <script src="assets/js/appear.min.js"></script>
+    <script src="{% static 'js/appear.min.js' %}"></script>
     <!-- MAGNIFICANT JS -->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
     <!-- MOBILE MENU JS-->
-    <script src="assets/js/mobilemenu.js"></script>
+    <script src="{% static 'js/mobilemenu.js' %}"></script>
     <!-- GSAP AND LOCOMOTIV JS-->
-    <script src="assets/js/gsap.min.js"></script>
-    <script src="assets/js/ScrollTrigger.min.js"></script>
-    <script src="assets/js/lenis.js"></script>
+    <script src="{% static 'js/gsap.min.js' %}"></script>
+    <script src="{% static 'js/ScrollTrigger.min.js' %}"></script>
+    <script src="{% static 'js/lenis.js' %}"></script>
     <!-- SLICK JS-->
-    <script src="assets/js/slick.min.js"></script>
+    <script src="{% static 'js/slick.min.js' %}"></script>
     <!-- NICE SELECT JS-->
-    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
     <!-- IMAGE LOADER JS-->
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
     <!-- ISOTOPE JS-->
-    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
     <!--  WOW ANIMATION JS-->
-    <script src="assets/js/wow.min.js"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
     <!-- SCRIPT JS-->
-    <script src="assets/js/script.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 
 </html>

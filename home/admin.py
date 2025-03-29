@@ -1,7 +1,7 @@
 from django.contrib import admin
 #from home.models import Home
 from home.models import About
-from .models import SkillSection, Skill
+from .models import Contact, SkillSection, Skill
 from .models import BlogPost
 from .models import ProjectCategory, Project
 
@@ -55,3 +55,5 @@ class BlogPostAdmin(admin.ModelAdmin):
     list_display = ('title', 'is_published', 'created_at')
     list_filter = ('is_published', 'created_at')
     search_fields = ('title', 'summary', 'content')
+
+admin.register(Contact)

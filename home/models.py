@@ -151,3 +151,13 @@ class BlogPost(models.Model):
 
     def get_absolute_url(self):
         return reverse("blog_detail", kwargs={"slug": self.slug})
+    
+class Contact(models.Model):
+    full_name = models.CharField(max_length=255)
+    email = models.EmailField()
+    subject = models.CharField(max_length=255)
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.full_name} - {self.subject}"
