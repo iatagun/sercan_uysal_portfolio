@@ -3,7 +3,7 @@ from django.contrib import admin
 from home.models import About
 from .models import Contact, SkillSection, Skill
 from .models import BlogPost
-from .models import ProjectCategory, Project
+from .models import ProjectCategory, Project, PDFDocument
 
 from .models import ContactInfo, SocialLink, ContactMessage
 
@@ -57,3 +57,19 @@ class BlogPostAdmin(admin.ModelAdmin):
     search_fields = ('title', 'summary', 'content')
 
 admin.register(Contact)
+
+
+from django.utils.html import format_html
+@admin.register(PDFDocument)
+class PDFDocumentAdmin(admin.ModelAdmin):
+    list_display = ('title', 'uploaded_at', 'download_link')
+    readonly_fields = ('uploaded_at', 'download_link')
+
+    def download_link(self, obj):
+        """
+        Eğer PDF dosyası mevcutsa, indirme linki oluşturur.
+        """
+        if obj.pdf_file:
+            return format_html('<a href="{}" target="_blank">PDF İndir</a>', obj.pdf_file.url)
+        return "Dosya yok"
+    download_link.short_description = "PDF İndir"

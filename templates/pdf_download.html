@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>PDF İndir</title>
+</head>
+<body>
+    {% if pdf_document and pdf_document.pk %}
+        {% url 'download_pdf' pdf_document.pk as download_url %}
+        <button onclick="window.location.href='{{ download_url }}'">
+            PDF İndir
+        </button>
+    {% else %}
+        <p>PDF bulunamadı.</p>
+    {% endif %}
+</body>
+</html>

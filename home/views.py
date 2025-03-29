@@ -8,6 +8,8 @@ from django.core.mail import send_mail
 from django.conf import settings
 from .models import ContactInfo, SocialLink, ContactMessage
 from .models import BlogPost
+from django.http import FileResponse
+from .models import PDFDocument
 # Create your views here.
 
 
@@ -180,3 +182,20 @@ def contact(request):
     }
     return render(request, 'contact.html', context)
 
+def download_pdf(request, pk):
+    """
+    Verilen pk'ya sahip PDFDocument nesnesini bularak, dosyayı indirme olarak sunar.
+    """
+    pdf_document = get_object_or_404(PDFDocument, pk=pk)
+    if pdf_document.pdf_file:
+        return FileResponse(
+            pdf_document.pdf_file.open('rb'),
+            as_attachment=True,
+            filename=f"{pdf_document.title}.pdf"
+        )
+    else:
+        return HttpResponse("Dosya bulunamadı.", status=404)
+
+def pdf_download_page(request, pk):
+    pdf_document = get_object_or_404(PDFDocument, pk=pk)
+    return render(request, 'pdf_download_page.html', {'pdf_document': pdf_document})

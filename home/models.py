@@ -167,3 +167,18 @@ class Contact(models.Model):
 
     def __str__(self):
         return f"{self.full_name} - {self.subject}"
+    
+class PDFDocument(models.Model):
+    title = models.CharField(max_length=255, verbose_name="Başlık")
+    pdf_file = models.FileField(upload_to='pdfs/', verbose_name="PDF Dosyası")
+    uploaded_at = models.DateTimeField(auto_now_add=True, verbose_name="Yüklenme Tarihi")
+
+    def __str__(self):
+        return self.title
+
+    def get_download_url(self):
+        """
+        Bu metod, PDF dosyasının URL'sini döner.
+        PDF dosyası varsa, dosyanın URL'sini döndürür; aksi halde boş bir string döner.
+        """
+        return self.pdf_file.url if self.pdf_file else ''

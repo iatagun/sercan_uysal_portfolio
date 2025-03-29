@@ -29,5 +29,8 @@ urlpatterns = [
     path('blog', views.blog, name='blog'),
     path('2d', views.twod, name='2d'),
     path('3d', views.threed, name='3d'),
+    
+    path('download/<int:pk>/', views.download_pdf, name='download_pdf'),
+    path('pdf/<int:pk>/', views.pdf_download_page, name='pdf_download_page'),
 
 ]
