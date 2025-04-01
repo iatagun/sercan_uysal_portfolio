@@ -211,20 +211,23 @@
     <!-- START SERVICE DESIGN AREA -->
     <section id="my-skills">
         <div class="ms-container">
-            <div class="ms-title">
-                <h2>{{ skill_section.title }}</h2>
-            </div>
             <div class="ms-row">
                 <div class="ms-col">
-                    <h4 style="color: #404041;">{{ skill_section.subtitle }}</h4>
-                    <p style="color: #404041;">{{ skill_section.description|truncatechars:495 }}</p>
-                    {% if skill_section.additional_description %}
-                        <p style="color: #404041;">{{ skill_section.additional_description }}</p>
-                    {% endif %}
-                    <a href="{{ skill_section.button_link }}" class="ms-btn" style="background-color: #c89d66; color: white; border: none;">{{ skill_section.button_text }}</a>
+                    <h2 style="color: #404041;">Becerilerim</h2>
+                    {% for beceri in beceri.skills.all %}
+                        <div class="ms-progress" data-progress-width="{{ beceri.proficiency_percentage }}%">
+                            <h5 class="ms-progress-title">
+                                {{ beceri.name }} - {{ beceri.proficiency_percentage }}%
+                            </h5>
+                            <div style="background-color: #e6e6e6; height: 6px; border-radius: 3px; overflow: hidden;">
+                                <div class="ms-progress-bar" style="width: {{ beceri.proficiency_percentage|default:0 }}%; height: 100%; background-color: #c89d66; border-radius: 3px;"></div>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
                 <div class="ms-col">
-                    {% for skill in skill_section.skills.all|slice:":4" %}
+                    <h2 style="color: #404041;">Kullandığım Programlar</h2>
+                    {% for skill in skill_section.skills.all %}
                         <div class="ms-progress" data-progress-width="{{ skill.proficiency_percentage }}%">
                             <h5 class="ms-progress-title">
                                 {{ skill.name }} - {{ skill.proficiency_percentage }}%
@@ -232,11 +235,8 @@
                             <div style="background-color: #e6e6e6; height: 6px; border-radius: 3px; overflow: hidden;">
                                 <div class="ms-progress-bar" style="width: {{ skill.proficiency_percentage|default:0 }}%; height: 100%; background-color: #c89d66; border-radius: 3px;"></div>
                             </div>
-                            
                         </div>
-                        
                     {% endfor %}
-                    <a href="{{ skill_section.button_link }}" class="ms-btn" style="background-color: #c89d66; color: white; border: none;">{{ skill_section.button_text }}</a>
                 </div>
             </div>
         </div>

@@ -25,6 +25,7 @@ def home(request):
     categories_img = Project.image
     contact_info = ContactInfo.objects.first()
     social_links = SocialLink.objects.all()
+    beceri = SkillSection.objects.all()[1]
 
 
     if request.method == "POST":
@@ -53,7 +54,8 @@ def home(request):
         'categories_img': categories_img,
         'contact_info': contact_info,
         'social_links': social_links,
-        'projects': last_three_projects
+        'projects': last_three_projects,
+        'beceri': beceri
     }
     return render(request, 'index.html', context)
 
